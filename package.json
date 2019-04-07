@@ -1,0 +1,12 @@
+{
+  "name": "nestier.sib.li",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@bitbucket.org:siberex/nestier.sib.li.git",
+  "author": "Stepan Legachev (www.sib.li)",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "nestjs": "^0.0.1"
+  }
+}
