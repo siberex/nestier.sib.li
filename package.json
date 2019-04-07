@@ -6,6 +6,13 @@
   "author": "Stepan Legachev (www.sib.li)",
   "license": "MIT",
   "private": true,
+  "engines": {
+    "node": "10.x.x"
+  },
+  "scripts": {
+    "deploy:gae": "gcloud app deploy --quiet",
+    "start": "node src/index.js"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "nestjs": "^0.0.1"
