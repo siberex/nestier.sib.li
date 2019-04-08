@@ -24,3 +24,16 @@ Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
 3. Deploy (version will be set to `prod-1`)
 
         yarn deploy:gae -v prod-1
+
+### Run locally with Docker
+
+1. Install [Docker](https://docs.docker.com/install/) with [docker-compose](https://docs.docker.com/compose/install/)
+
+2. Run:
+
+        docker-compose up -d
+
+
+To stop containers, run:
+
+    docker-compose down
