@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "nestjs": "^0.0.1"
     "@nestjs/common": "^6.0.5",
     "@nestjs/core": "^6.0.5",
     "@nestjs/platform-express": "^6.0.5",
