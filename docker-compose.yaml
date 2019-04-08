@@ -1,0 +1,27 @@
+version: "3"
+services:
+
+  postgres:
+    image: nestier-sib-li/postgres
+    build:
+      context: .
+      dockerfile: docker/postgres.dockerfile
+    env_file: docker/.env.dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - nestier-db-data:/var/lib/postgresql/data:rw
+
+  nodejs:
+    image: nestier-sib-li/nodejs
+    build:
+      context: .
+      dockerfile: docker/nodejs.dockerfile
+    env_file: docker/.env.dev
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+volumes:
+  nestier-db-data:

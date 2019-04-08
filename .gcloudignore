@@ -8,5 +8,10 @@
 # Include .gitignore contents
 #!include:.gitignore
 
+# Docker-related stuff
+.dockerignore
+/docker/
+/docker-compose.yaml
+
 # Additional stuff not to be deployed
 *.md
