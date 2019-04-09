@@ -5,9 +5,9 @@ services:
     image: nestier-sib-li/postgres-dev
     build:
       context: .
-      dockerfile: docker/postgres.dev.dockerfile
+      dockerfile: docker/dev.postgres.dockerfile
       shm_size: '256mb'
-    env_file: docker/.env.dev
+    env_file: docker/dev.env
     ports:
       - "5432:5432"
     volumes:
@@ -17,8 +17,8 @@ services:
     image: nestier-sib-li/nodejs-dev
     build:
       context: .
-      dockerfile: docker/nodejs.dev.dockerfile
-    env_file: docker/.env.dev
+      dockerfile: docker/dev.nodejs.dockerfile
+    env_file: docker/dev.env
     ports:
       - "8080:8080"
     volumes:
