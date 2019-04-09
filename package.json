@@ -1,7 +1,6 @@
 {
   "name": "nestier.sib.li",
   "version": "1.0.0",
-  "main": "src/index.js",
   "repository": "git@bitbucket.org:siberex/nestier.sib.li.git",
   "author": "Stepan Legachev (www.sib.li)",
   "license": "MIT",
@@ -10,8 +9,13 @@
     "node": ">=10"
   },
   "scripts": {
+    "build": "rimraf dist && tsc",
     "deploy:gae": "gcloud app deploy --quiet",
-    "start": "node src/index.js"
+    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "start:dev": "nodemon",
+    "start:prod": "node dist/main.js",
+    "prestart:prod": "yarn build",
+    "lint": "tslint -p ."
   },
   "dependencies": {
     "@nestjs/common": "^6.0.5",
