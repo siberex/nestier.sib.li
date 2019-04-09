@@ -10,11 +10,11 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc",
-    "deploy:gae": "gcloud app deploy --quiet",
-    "start": "ts-node -r tsconfig-paths/register src/main.ts",
+    "deploy:gae": "yarn build && gcloud app deploy --quiet",
+    "start:ts": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nodemon",
-    "start:prod": "node dist/main.js",
-    "prestart:prod": "yarn build",
+    "start": "node dist/main",
+    "prestart": "yarn build",
     "lint": "tslint -p ."
   },
   "dependencies": {

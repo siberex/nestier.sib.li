@@ -8,6 +8,17 @@
 # Include .gitignore contents
 #!include:.gitignore
 
+# Dev artifacts not-related to deployment
+/tsconfig.json
+/nodemon.json
+/tslint.json
+
+# Explicitly include build results
+!dist/
+
+# We don't need sources on deployed instance
+/src
+
 # Docker-related stuff
 .dockerignore
 /docker/
