@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 services:
 
   postgres:
@@ -11,7 +11,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - nestier-db-data:/var/lib/postgresql/data:rw
+      - ./docker/.pgdata:/var/lib/postgresql/data:rw
 
   nodejs:
     image: nestier-sib-li/nodejs-dev
@@ -21,8 +21,7 @@ services:
     env_file: docker/.env.dev
     ports:
       - "8080:8080"
+    volumes:
+      - ./src:/app/src:ro
     depends_on:
       - postgres
-
-volumes:
-  nestier-db-data:
