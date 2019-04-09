@@ -7,6 +7,9 @@ yarn-error.log*
 # Builds
 /dist/
 
+# Docker
+/docker/.pgdata
+
 # dotenv environment variables
 .env
 
