@@ -1,2 +1,27 @@
+# Git
 .git
+.gitignore
+
+# Node.js
 node_modules
+
+# Docker-related stuff
+/docker
+/docker-compose.yaml
+.dockerignore
+
+# dotenv environment variables
+.env
+
+# App Engine
+.gcloudignore
+app.yaml
+
+# JetBrains IDE
+.idea
+
+# Mac OS X
+.DS_Store
+
+# Additional stuff not to be included in Docker contexts
+*.md
