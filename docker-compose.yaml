@@ -2,10 +2,11 @@ version: "3"
 services:
 
   postgres:
-    image: nestier-sib-li/postgres
+    image: nestier-sib-li/postgres-dev
     build:
       context: .
-      dockerfile: docker/postgres.dockerfile
+      dockerfile: docker/postgres.dev.dockerfile
+      shm_size: '256mb'
     env_file: docker/.env.dev
     ports:
       - "5432:5432"
@@ -13,10 +14,10 @@ services:
       - nestier-db-data:/var/lib/postgresql/data:rw
 
   nodejs:
-    image: nestier-sib-li/nodejs
+    image: nestier-sib-li/nodejs-dev
     build:
       context: .
-      dockerfile: docker/nodejs.dockerfile
+      dockerfile: docker/nodejs.dev.dockerfile
     env_file: docker/.env.dev
     ports:
       - "8080:8080"
