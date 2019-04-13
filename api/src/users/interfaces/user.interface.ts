@@ -5,8 +5,8 @@ export enum UserRole {
 }
 
 export interface User {
-    id: number;
-    login: string;
-    password: string;
-    role: UserRole;
+    readonly id: number;
+    readonly login: string;
+    readonly password: string;
+    readonly role: UserRole;
 }
