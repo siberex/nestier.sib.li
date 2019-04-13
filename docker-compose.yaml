@@ -13,15 +13,28 @@ services:
     volumes:
       - ./docker/.pgdata:/var/lib/postgresql/data:rw
 
-  nodejs:
-    image: nestier-sib-li/nodejs-dev
+  api:
+    image: nestier-sib-li/api-dev
     build:
-      context: .
-      dockerfile: docker/dev.nodejs.dockerfile
+      context: api
+      dockerfile: ../docker/dev.api.dockerfile
+    env_file: docker/dev.env
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./api/src:/app/src:ro
+    depends_on:
+      - postgres
+
+  web:
+    image: nestier-sib-li/web-dev
+    build:
+      context: web
+      dockerfile: ../docker/dev.web.dockerfile
     env_file: docker/dev.env
     ports:
       - "8080:8080"
     volumes:
-      - ./src:/app/src:ro
+      - ./web/src:/app/src:ro
     depends_on:
-      - postgres
+      - api

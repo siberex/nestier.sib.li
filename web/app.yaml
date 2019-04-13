@@ -1,0 +1,12 @@
+runtime: nodejs10
+
+env_variables:
+  NODE_ENV: production
+
+handlers:
+# Node.js handler
+# Entry point is defined by "start" script in package.json
+- url: /.*
+  script: auto
+  secure: always
+  redirect_http_response_code: 301

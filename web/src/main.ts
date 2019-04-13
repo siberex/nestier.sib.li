@@ -4,8 +4,7 @@ import { Logger } from '@nestjs/common';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 
-// App Engine deployment should use process.env.PORT
-const PORT: string|number = process.env.API_PORT || process.env.PORT || 8080;
+const PORT: string|number = process.env.PORT || 8080;
 
 (async () => {
   const adapter = new ExpressAdapter(express());
