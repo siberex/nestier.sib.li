@@ -3,5 +3,8 @@
     "workspaces": [
         "api",
         "web"
-    ]
+    ],
+    "scripts": {
+        "deploy": "gcloud app deploy dispatch.yaml web/app.yaml api/app.yaml --quiet"
+    }
 }
