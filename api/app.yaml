@@ -1,3 +1,4 @@
+service: api
 runtime: nodejs10
 
 env_variables:
