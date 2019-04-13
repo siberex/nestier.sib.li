@@ -12,7 +12,7 @@ export class BooksController {
     }
 
     @Get(':id')
-    async findOne(@Param() params): Promise<Book> {
-        return this.booksService.findOne(<number> params.id);
+    async findOne(@Param('id') id: string): Promise<Book> {
+        return this.booksService.findOne(id as unknown as number);
     }
 }
