@@ -1,14 +1,18 @@
 import { Controller, Get, Param, Req } from '@nestjs/common';
+import { UsersService } from './users.service';
+import { User } from './interfaces/user.interface';
 
 @Controller('users')
 export class UsersController {
+    constructor(private readonly usersService: UsersService) {}
+
     @Get()
-    findAll(@Req() request: Request): object[] {
-        return [{}, {}, {}];
+    async findAll(@Req() request: Request): Promise<User[]> {
+        return this.usersService.findAll();
     }
 
     @Get(':id')
-    findOne(@Param() params): string {
-        return `${params.id}`;
+    async findOne(@Param('id') id: string): Promise<User> {
+        return this.usersService.findOne(id as unknown as number);
     }
 }

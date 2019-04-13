@@ -13,7 +13,9 @@ export class BooksService {
         return this.books;
     }
 
-    findOne(id: number): Book | null {
-        return null;
+    findOne(id: number): Book {
+        return this.books.find(
+            book => (book.id === id),
+        );
     }
 }
