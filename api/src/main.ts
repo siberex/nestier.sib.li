@@ -1,23 +1,19 @@
-import * as express from 'express';
 import { NestFactory } from '@nestjs/core';
 import { Logger } from '@nestjs/common';
-import { ExpressAdapter } from '@nestjs/platform-express';
+import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 
 // App Engine deployment should use process.env.PORT
 const PORT: string|number = process.env.API_PORT || process.env.PORT || 8080;
 
 (async () => {
-  const adapter = new ExpressAdapter(express());
+  const app = await NestFactory.create<NestExpressApplication>(
+      AppModule,
+  );
 
   // Substitute real user IP from load balancer
-  adapter.set('trust proxy', true);
-  adapter.set('x-powered-by', false);
-
-  const app = await NestFactory.create(
-      AppModule,
-      adapter,
-  );
+  app.set('trust proxy', true);
+  app.set('x-powered-by', false);
 
   await app.listen(PORT, () => {
     Logger.log(`App listening on port ${PORT}`, 'HTTP');
