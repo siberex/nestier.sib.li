@@ -16,14 +16,10 @@ Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
     - Or set Project ID for existing profile:
 
             gcloud config set project YOUR-PROJECT-ID
-        
-2. Install dependencies:
 
-        yarn install
+2. Deploy (version will be set to `prod-1`)
 
-3. Deploy (version will be set to `prod-1`)
-
-        yarn deploy:gae -v prod-1
+        gcloud app deploy api/app.yaml web/app.yaml --quiet -v prod-1        
 
 ### Run locally with Docker
 
