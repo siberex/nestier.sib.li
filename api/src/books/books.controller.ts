@@ -13,7 +13,7 @@ export class BooksController {
     }
 
     @Get()
-    async findAll(@Req() request: Request): Promise<Book[]> {
+    async findAll(): Promise<Book[]> {
         return this.booksService.findAll();
     }
 
