@@ -12,4 +12,8 @@ export class BooksService {
     findAll(): Book[] {
         return this.books;
     }
+
+    findOne(id: number): Book | null {
+        return null;
+    }
 }
