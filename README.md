@@ -19,7 +19,7 @@ Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
 
 2. Deploy (version will be set to `prod-1`)
 
-        gcloud app deploy api/app.yaml web/app.yaml --quiet -v prod-1        
+        gcloud app deploy dispatch.yaml web/app.yaml api/app.yaml --quiet -v prod-1
 
 ### Run locally with Docker
 
