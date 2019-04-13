@@ -15,6 +15,10 @@ const PORT: string|number = process.env.API_PORT || process.env.PORT || 8081;
   app.set('trust proxy', true);
   app.set('x-powered-by', false);
 
+  if ('GAE_SERVICE' in process.env &&  process.env.GAE_SERVICE === 'api') {
+    app.setGlobalPrefix('api');
+  }
+
   await app.listen(PORT, () => {
     Logger.log(`App listening on port ${PORT}`, 'HTTP');
     Logger.log('Press Ctrl+C to quit.', 'HTTP');
