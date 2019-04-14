@@ -5,6 +5,7 @@
         "web"
     ],
     "scripts": {
-        "deploy": "gcloud app deploy dispatch.yaml web/app.yaml api/app.yaml --quiet"
+        "deploy:gae": "gcloud app deploy dispatch.yaml web/app.yaml api/app.yaml --quiet",
+        "start:docker": "docker-compose up -d --force-recreate --build"
     }
 }

@@ -4,6 +4,9 @@
 
 Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
 
+### Prerequisites
+
+- [Install yarn](https://yarnpkg.com/en/docs/install)
 
 ### Google App Engine deployment
 
@@ -19,7 +22,7 @@ Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
 
 2. Deploy (version will be set to `prod-1`)
 
-        yarn deploy -v prod-1
+        yarn deploy:gae -v prod-1
 
 ### Run locally with Docker
 
@@ -27,9 +30,8 @@ Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
 
 2. Run:
 
-        docker-compose up -d
+        yarn start:docker
 
+    To stop containers, run:
 
-To stop containers, run:
-
-    docker-compose down
+        docker-compose down
