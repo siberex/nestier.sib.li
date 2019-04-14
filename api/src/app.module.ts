@@ -1,27 +1,35 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { Connection } from 'typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { BooksModule } from './books/books.module';
+import { ConfigModule, ConfigService } from './config';
 
 @Module({
     imports: [
-        TypeOrmModule.forRoot({
-            type: 'postgres',
-            host: process.env.POSTGRES_HOST || 'localhost',
-            port: (process.env.POSTGRES_PORT as unknown as number) || 5432,
-            username: process.env.POSTGRES_USER || 'postgres',
-            password: process.env.POSTGRES_PASSWORD || '',
-            database: process.env.POSTGRES_DB || 'test',
-            entities: [__dirname + '/**/*.entity{.ts,.js}'],
-            synchronize: true,
-            ssl: process.env.NODE_ENV === 'production',
-        }),
+        ConfigModule,
+        TypeOrmModule.forRootAsync({
+            inject: [ConfigService],
+            useFactory: async (config: ConfigService) => ({
+                type: 'postgres',
+                host: config.get('POSTGRES_HOST'),
+                port: config.get('POSTGRES_PORT'),
+                username: config.get('POSTGRES_USER'),
+                password: config.get('POSTGRES_PASSWORD'),
+                database: config.get('POSTGRES_DB'),
+                entities: [__dirname + '/**/*.entity{.ts,.js}'],
+                synchronize: config.isDev(),
+                ssl: config.isProd(),
+            }),
+        } as TypeOrmModuleOptions),
         UsersModule,
         BooksModule,
     ],
     controllers: [AppController],
     providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+    constructor(private readonly connection: Connection) {}
+}
