@@ -7,6 +7,9 @@ yarn-error.log*
 # Docker
 /docker/.pgdata
 
+# dotenv environment variables
+.env
+
 # JetBrains IDE
 .idea/
 
