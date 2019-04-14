@@ -16,6 +16,7 @@ const PORT: string | number = process.env.API_PORT || process.env.PORT || 8081;
     app.set('x-powered-by', false);
 
     if ('GAE_SERVICE' in process.env && process.env.GAE_SERVICE === 'api') {
+        // Reflects dispatch.yaml for App Engine deployment
         app.setGlobalPrefix('api');
     }
 
