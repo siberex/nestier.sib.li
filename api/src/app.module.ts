@@ -16,6 +16,7 @@ import { BooksModule } from './books/books.module';
             database: process.env.POSTGRES_DB || 'test',
             entities: [__dirname + '/**/*.entity{.ts,.js}'],
             synchronize: true,
+            ssl: process.env.NODE_ENV === 'production',
         }),
         UsersModule,
         BooksModule,
