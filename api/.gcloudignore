@@ -18,6 +18,10 @@
 # Include .gitignore contents
 #!include:.gitignore
 
+# Explicitly include app.env.yaml file and exclude example
+!app.env.yaml
+app.env.example.yaml
+
 # Dev artifacts not-related to deployment
 /nodemon.json
 /tslint.json
