@@ -21,3 +21,6 @@
 # Dev artifacts not-related to deployment
 /nodemon.json
 /tslint.json
+
+# App Engine
+app*.yaml

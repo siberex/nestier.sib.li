@@ -12,7 +12,7 @@ node_modules
 .env
 
 # App Engine
-app.yaml
+app*.yaml
 
 # Mac OS X
 .DS_Store

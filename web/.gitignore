@@ -6,3 +6,9 @@ yarn-error.log*
 
 # Builds
 dist/
+
+# App Engine configuration
+app.env.yaml
+
+# dotenv environment variables
+.env

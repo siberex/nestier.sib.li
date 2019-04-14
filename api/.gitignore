@@ -9,3 +9,6 @@ dist/
 
 # App Engine configuration
 app.env.yaml
+
+# dotenv environment variables
+.env
