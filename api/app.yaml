@@ -1,8 +1,8 @@
 service: api
 runtime: nodejs10
 
-env_variables:
-  NODE_ENV: production
+includes:
+  - app.env.yaml
 
 handlers:
 # Node.js handler
