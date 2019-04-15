@@ -1,13 +1,8 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-
-export enum UserRole {
-    GUEST = 'guest',
-    USER = 'user',
-    ADMIN = 'admin',
-}
+import { UserRole, User as iUser } from './interfaces/user.interface';
 
 @Entity()
-export class User {
+export class User implements iUser {
     @PrimaryGeneratedColumn()
     id: number;
 
