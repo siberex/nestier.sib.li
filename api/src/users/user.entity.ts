@@ -1,5 +1,6 @@
 import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 import { MinLength } from 'class-validator';
+import { Exclude } from 'class-transformer';
 
 export enum UserRole {
     GUEST = 'guest',
@@ -18,9 +19,11 @@ export class User {
     login: string;
 
     @Column({ length: 128 })
+    @Exclude()
     hash: string;
 
     @Column({ length: 32 })
+    @Exclude()
     salt: string;
 
     @Column({
@@ -29,4 +32,8 @@ export class User {
         default: UserRole.USER,
     })
     role: UserRole;
+
+    constructor(partial?: Partial<User>) {
+        Object.assign(this, partial);
+    }
 }

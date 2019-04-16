@@ -1,5 +1,5 @@
 import * as crypto from 'crypto';
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
@@ -13,15 +13,20 @@ export class UsersService {
     ) {}
 
     async create(userData: CreateUserDto): Promise<User> {
-        const user: User = new User();
+        const existing = await this.getByLogin(userData.login);
+        if (existing) {
+            throw new HttpException('Login already exists', 400);
+        }
 
-        // @fixme Check for existing login
-        user.login = userData.login;
+        const salt = crypto.randomBytes(16).toString('hex');
+        const hash = crypto.pbkdf2Sync(userData.password, salt,
+            999, 64, 'sha512').toString('hex');
 
-        user.salt = crypto.randomBytes(16).toString('hex');
-        user.hash = crypto.pbkdf2Sync(
-            userData.password, user.salt,
-           999, 64, 'sha512').toString('hex');
+        const user: User = new User({
+            login: userData.login,
+            salt,
+            hash,
+        });
 
         return await this.userRepository.save(user);
     }
@@ -32,16 +37,11 @@ export class UsersService {
         });
     }
 
-    async findOne(id: number): Promise<User> {
-        return await this.userRepository.findOne(id, {
-            select: ['id', 'login', 'role'],
-        });
+    async getById(id: number): Promise<User> {
+        return await this.userRepository.findOne(id);
     }
 
-    async findLogin(login: string): Promise<User> {
-        return await this.userRepository.findOne({
-            select: ['id', 'login', 'role'],
-            where: {login},
-        });
+    async getByLogin(login: string): Promise<User> {
+        return await this.userRepository.findOne({login});
     }
 }
