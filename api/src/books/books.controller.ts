@@ -9,7 +9,7 @@ export class BooksController {
 
     @Post()
     async create(@Body() createBookDto: CreateBookDto) {
-        return '...';
+        return this.booksService.create(createBookDto);
     }
 
     @Get()
