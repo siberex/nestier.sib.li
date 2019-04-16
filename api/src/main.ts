@@ -16,8 +16,9 @@ const PORT: string | number = process.env.API_PORT || process.env.PORT || 8081;
     app.set('x-powered-by', false);
 
     app.useGlobalPipes(new ValidationPipe({
-        whitelist: true,
         forbidNonWhitelisted: true,
+        transform: true,
+        validationError: {target: false},
     }));
 
     if ('GAE_SERVICE' in process.env && process.env.GAE_SERVICE === 'api') {
