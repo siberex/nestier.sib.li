@@ -4,6 +4,19 @@
 
 Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
 
+
+### Summary
+
+api — API service with Nest.js and [TypeORM](https://typeorm.io/).
+
+web — Angular Universal app which connects to the api.
+
+
+### API doc
+
+https://nestier.sib.li/api/doc/
+
+
 ### Prerequisites
 
 - [Install yarn](https://yarnpkg.com/en/docs/install)
@@ -32,6 +45,7 @@ Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
 3. Deploy (version will be set to `prod-1`)
 
         yarn deploy:gae -v prod-1
+
 
 ### Run locally with Docker
 
