@@ -5,6 +5,7 @@ import { ApiResponseModelProperty } from '@nestjs/swagger';
 @Entity()
 export class Book {
     @PrimaryGeneratedColumn()
+    @ApiResponseModelProperty()
     id: number;
 
     @Column({ length: 300 })
