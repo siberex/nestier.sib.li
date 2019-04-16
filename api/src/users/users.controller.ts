@@ -20,7 +20,7 @@ export class UsersController {
     @Post()
     @UseInterceptors(ClassSerializerInterceptor)
     @ApiOperation({ title: 'Create user' })
-    @ApiCreatedResponse({ description: 'User has been successfully created.' })
+    @ApiCreatedResponse({ type: User, description: 'User has been successfully created.' })
     @ApiBadRequestResponse({ description: 'Login already exists' })
     async create(@Body() createUserDto: CreateUserDto): Promise<User> {
         return this.usersService.create(createUserDto);
