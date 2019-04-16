@@ -27,15 +27,20 @@ export class UsersService {
     }
 
     async findAll(): Promise<User[]> {
-        return await this.userRepository.find();
+        return await this.userRepository.find({
+            select: ['id', 'login', 'role'],
+        });
     }
 
     async findOne(id: number): Promise<User> {
-        return await this.userRepository.findOne(id);
+        return await this.userRepository.findOne(id, {
+            select: ['id', 'login', 'role'],
+        });
     }
 
     async findLogin(login: string): Promise<User> {
         return await this.userRepository.findOne({
+            select: ['id', 'login', 'role'],
             where: {login},
         });
     }
