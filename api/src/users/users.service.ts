@@ -1,5 +1,5 @@
 import * as crypto from 'crypto';
-import { HttpException, Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.entity';
@@ -15,7 +15,7 @@ export class UsersService {
     async create(userData: CreateUserDto): Promise<User> {
         const existing = await this.getByLogin(userData.login);
         if (existing) {
-            throw new HttpException('Login already exists', 400);
+            throw new BadRequestException('Login already exists');
         }
 
         const salt = crypto.randomBytes(16).toString('hex');
