@@ -1,0 +1,21 @@
+# Git
+.git
+.gitignore
+
+# Node.js
+node_modules
+
+# Docker-related stuff
+.dockerignore
+
+# dotenv environment variables
+.env
+
+# App Engine
+app*.yaml
+
+# Mac OS X
+.DS_Store
+
+# Additional stuff not to be included in Docker contexts
+*.md

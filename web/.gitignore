@@ -4,14 +4,11 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Docker
-/docker/.pgdata
+# Builds
+dist/
+
+# App Engine configuration
+app.env.yaml
 
 # dotenv environment variables
 .env
-
-# JetBrains IDE
-.idea/
-
-# Mac OS X
-.DS_Store

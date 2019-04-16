@@ -1,0 +1,5 @@
+# Google App Engine service deployment configuration
+dispatch:
+  # Send API requests to the api service.
+  - url: "*/api/*"
+    service: api

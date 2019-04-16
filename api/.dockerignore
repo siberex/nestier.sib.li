@@ -5,20 +5,17 @@
 # Node.js
 node_modules
 
+# App
+ormconfig.json
+
 # Docker-related stuff
-/docker
-/docker-compose.yaml
 .dockerignore
 
 # dotenv environment variables
 .env
 
 # App Engine
-.gcloudignore
-app.yaml
-
-# JetBrains IDE
-.idea
+app*.yaml
 
 # Mac OS X
 .DS_Store

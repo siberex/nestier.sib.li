@@ -1,0 +1,13 @@
+service: api
+runtime: nodejs10
+
+includes:
+  - app.env.yaml
+
+handlers:
+# Node.js handler
+# Entry point is defined by "start" script in package.json
+- url: /.*
+  script: auto
+  secure: always
+  redirect_http_response_code: 301
