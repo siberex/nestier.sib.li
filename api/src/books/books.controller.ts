@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
-import { ApiCreatedResponse, ApiBadRequestResponse, ApiOperation } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiBadRequestResponse, ApiOperation, ApiOkResponse } from '@nestjs/swagger';
 import { BooksService } from './books.service';
 import { Book } from './book.entity';
 import { CreateBookDto } from './dto/create-book.dto';
@@ -16,11 +16,14 @@ export class BooksController {
     }
 
     @Get()
+    @ApiOkResponse({ type: [Book] })
     async findAll(): Promise<Book[]> {
         return this.booksService.findAll();
     }
 
     @Get(':id')
+    @ApiOperation({ title: 'Get book by id' })
+    @ApiOkResponse({ type: Book })
     async findOne(@Param('id', new ParseIntPipe()) id: number): Promise<Book> {
         return this.booksService.findOne(id);
     }
