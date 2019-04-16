@@ -5,6 +5,9 @@
 # Node.js
 node_modules
 
+# App
+ormconfig.json
+
 # Docker-related stuff
 .dockerignore
 
