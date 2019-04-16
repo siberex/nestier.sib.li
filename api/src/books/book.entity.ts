@@ -1,5 +1,5 @@
 import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
-import { MinLength } from 'class-validator';
+import { IsNotEmpty, MinLength } from 'class-validator';
 
 @Entity()
 export class Book {
@@ -8,12 +8,12 @@ export class Book {
 
     @Column({ length: 300 })
     @Index()
-    @MinLength(1, {message: 'Title is too short'})
+    @IsNotEmpty()
     title: string;
 
     @Column({ length: 300 })
     @Index()
-    @MinLength(1, {message: 'Author field is too short'})
+    @MinLength(2)
     author: string;
 
     constructor(partial?: Partial<Book>) {
