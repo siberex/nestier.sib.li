@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { validate } from 'class-validator';
 import { Book } from './book.entity';
 import { CreateBookDto } from './dto/create-book.dto';
 
@@ -13,13 +12,9 @@ export class BooksService {
     ) {}
 
     async create(bookData: CreateBookDto): Promise<Book> {
-        const book: Book = new Book();
-
         // @fixme Check for existing record
-        book.author = bookData.author;
-        book.title = bookData.title;
+        const book: Book = new Book(bookData);
 
-        const errors = await validate(book);
         return await this.bookRepository.save(book);
     }
 

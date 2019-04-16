@@ -15,4 +15,8 @@ export class Book {
     @Index()
     @MinLength(1, {message: 'Author field is too short'})
     author: string;
+
+    constructor(partial?: Partial<Book>) {
+        Object.assign(this, partial);
+    }
 }
