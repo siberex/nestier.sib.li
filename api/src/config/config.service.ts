@@ -34,6 +34,22 @@ export class ConfigService implements TypeOrmOptionsFactory {
     }
 
     createTypeOrmOptions(): TypeOrmModuleOptions {
+        const regexIsOn: RegExp = /(true|on|1)/gi;
+
+        let useSSL: boolean = false;
+        if ( this.get('POSTGRES_SSL') ) {
+            useSSL = regexIsOn.test( this.get('POSTGRES_SSL') as string );
+        } else {
+            useSSL = this.isProd();
+        }
+
+        let syncSchema: boolean = false;
+        if ( this.get('POSTGRES_SYNC_SCHEMA') ) {
+            syncSchema = regexIsOn.test( this.get('POSTGRES_SYNC_SCHEMA') as string );
+        } else {
+            syncSchema = this.isDev();
+        }
+
         return {
             type: 'postgres',
             host: this.get('POSTGRES_HOST') as string || 'localhost',
@@ -42,8 +58,8 @@ export class ConfigService implements TypeOrmOptionsFactory {
             password: this.get('POSTGRES_PASSWORD') as string || '',
             database: this.get('POSTGRES_DB') as string || 'test',
             entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-            synchronize: this.isDev(),
-            ssl: this.isProd(),
+            synchronize: syncSchema,
+            ssl: useSSL,
         };
     }
 }
