@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Req } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
 import { BooksService } from './books.service';
 import { Book } from './book.entity';
 import { CreateBookDto } from './dto/create-book.dto';
@@ -18,7 +18,7 @@ export class BooksController {
     }
 
     @Get(':id')
-    async findOne(@Param('id') id: string): Promise<Book> {
-        return this.booksService.findOne(id as unknown as number);
+    async findOne(@Param('id', new ParseIntPipe()) id: number): Promise<Book> {
+        return this.booksService.findOne(id);
     }
 }
