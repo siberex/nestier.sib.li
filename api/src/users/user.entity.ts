@@ -1,5 +1,5 @@
 import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
-import { MinLength } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 import { Exclude } from 'class-transformer';
 
 export enum UserRole {
@@ -15,7 +15,7 @@ export class User {
 
     @Column({ length: 200 })
     @Index({ unique: true })
-    @MinLength(1, {message: 'Login is too short'})
+    @IsNotEmpty()
     login: string;
 
     @Column({ length: 128 })

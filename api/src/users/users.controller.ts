@@ -8,6 +8,7 @@ import {
     Post,
     UseInterceptors,
 } from '@nestjs/common';
+import { ApiCreatedResponse, ApiBadRequestResponse, ApiOperation } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
@@ -18,6 +19,9 @@ export class UsersController {
 
     @Post()
     @UseInterceptors(ClassSerializerInterceptor)
+    @ApiOperation({ title: 'Create user' })
+    @ApiCreatedResponse({ description: 'User has been successfully created.' })
+    @ApiBadRequestResponse({ description: 'Login already exists' })
     async create(@Body() createUserDto: CreateUserDto): Promise<User> {
         return this.usersService.create(createUserDto);
     }
