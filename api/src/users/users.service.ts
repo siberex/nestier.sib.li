@@ -1,3 +1,4 @@
+import * as crypto from 'crypto';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -12,8 +13,17 @@ export class UsersService {
     ) {}
 
     async create(userData: CreateUserDto): Promise<User> {
-        const user: User = new User(userData);
-        return await this.userRepository.create(user);
+        const user: User = new User();
+
+        // @fixme Check for existing login
+        user.login = userData.login;
+
+        user.salt = crypto.randomBytes(16).toString('hex');
+        user.hash = crypto.pbkdf2Sync(
+            userData.password, user.salt,
+           999, 64, 'sha512').toString('hex');
+
+        return await this.userRepository.save(user);
     }
 
     async findAll(): Promise<User[]> {
@@ -22,5 +32,11 @@ export class UsersService {
 
     async findOne(id: number): Promise<User> {
         return await this.userRepository.findOne(id);
+    }
+
+    async findLogin(login: string): Promise<User> {
+        return await this.userRepository.findOne({
+            where: {login},
+        });
     }
 }

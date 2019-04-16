@@ -1,16 +1,27 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { UserRole, User as iUser } from './interfaces/user.interface';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
+import { MinLength } from 'class-validator';
+
+export enum UserRole {
+    GUEST = 'guest',
+    USER = 'user',
+    ADMIN = 'admin',
+}
 
 @Entity()
-export class User implements iUser {
+export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column({ length: 200 })
+    @Index({ unique: true })
+    @MinLength(1, {message: 'Login is too short'})
     login: string;
 
-    @Column({ length: 64 })
-    password: string;
+    @Column({ length: 128 })
+    hash: string;
+
+    @Column({ length: 32 })
+    salt: string;
 
     @Column({
         type: 'enum',
