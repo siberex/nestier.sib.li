@@ -41,6 +41,10 @@ const PORT: string | number = process.env.API_PORT || process.env.PORT || 8081;
     const apiDoc = SwaggerModule.createDocument(app, swaggerOptions.build());
     SwaggerModule.setup(swaggerPath, app, apiDoc);
 
+    if ( 'API_ENABLE_CORS' in process.env && /(true|on|1)/gi.test(process.env.API_ENABLE_CORS) ) {
+        app.enableCors();
+    }
+
     await app.listen(PORT, () => {
         Logger.log(`App listening on port ${PORT}`, 'HTTP');
         Logger.log('Press Ctrl+C to quit.', 'HTTP');

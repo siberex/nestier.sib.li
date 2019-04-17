@@ -1,9 +1,14 @@
+import { enableProdMode } from '@angular/core';
 import { NestFactory } from '@nestjs/core';
 import { Logger } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
 
 const PORT: string | number = process.env.PORT || 8080;
+
+if (process.env.NODE_ENV === 'production') {
+    enableProdMode();
+}
 
 (async () => {
     const app = await NestFactory.create<NestExpressApplication>(
