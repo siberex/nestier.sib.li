@@ -1,4 +1,4 @@
-create type user_role_enum as enum ('guest', 'user', 'admin');
+create type users_role_enum as enum ('guest', 'user', 'admin');
 
 create table users
 (
@@ -8,7 +8,7 @@ create table users
     login varchar(200)                                  not null,
     hash  varchar(128)                                  not null,
     salt  varchar(32)                                   not null,
-    role  user_role_enum default 'user'::user_role_enum not null
+    role  users_role_enum default 'user'::users_role_enum not null
 );
 
 create unique index users_login
