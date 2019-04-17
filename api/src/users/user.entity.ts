@@ -9,7 +9,7 @@ export enum UserRole {
     ADMIN = 'admin',
 }
 
-@Entity()
+@Entity('users')
 export class User {
     @PrimaryGeneratedColumn()
     @ApiResponseModelProperty()

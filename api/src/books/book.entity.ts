@@ -1,11 +1,11 @@
 import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
-import { IsNotEmpty, MinLength } from 'class-validator';
+import { IsInt, IsNotEmpty, IsUrl, MinLength } from 'class-validator';
 import { ApiResponseModelProperty } from '@nestjs/swagger';
 
-@Entity()
+@Entity('books')
 export class Book {
     @PrimaryGeneratedColumn()
-    @ApiResponseModelProperty()
+    @ApiResponseModelProperty({example: 1})
     id: number;
 
     @Column({ length: 300 })
@@ -19,6 +19,16 @@ export class Book {
     @MinLength(2)
     @ApiResponseModelProperty()
     author: string;
+
+    @Column()
+    @IsInt()
+    @ApiResponseModelProperty({example: 2019})
+    year: number;
+
+    @Column()
+    @IsUrl()
+    @ApiResponseModelProperty()
+    cover: string;
 
     constructor(partial?: Partial<Book>) {
         Object.assign(this, partial);
