@@ -29,10 +29,10 @@ INSERT INTO public.books (id, title, author, year, cover) VALUES (8, 'Harry Pott
 INSERT INTO public.books (id, title, author, year, cover) VALUES (9, 'Harry Potter and the Order of the Phoenix', 'J.K. Rowling, Mary GrandPré', 2003, 'https://images.gr-assets.com/books/1387141547m/2.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (10, 'The Hobbit or There and Back Again', 'J.R.R. Tolkien', 1937, 'https://images.gr-assets.com/books/1372847500m/5907.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (11, 'Harry Potter and the Chamber of Secrets', 'J.K. Rowling, Mary GrandPré', 1998, 'https://images.gr-assets.com/books/1474169725m/15881.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (12, ' The Fellowship of the Ring', 'J.R.R. Tolkien', 1954, 'https://images.gr-assets.com/books/1298411339m/34.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (12, 'The Fellowship of the Ring', 'J.R.R. Tolkien', 1954, 'https://images.gr-assets.com/books/1298411339m/34.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (13, 'Catching Fire', 'Suzanne Collins', 2009, 'https://images.gr-assets.com/books/1358273780m/6148028.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (14, 'The Help', 'Kathryn Stockett', 2009, 'https://images.gr-assets.com/books/1346100365m/4667024.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (15, 'The Kite Runner ', 'Khaled Hosseini', 2003, 'https://images.gr-assets.com/books/1484565687m/77203.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (15, 'The Kite Runner', 'Khaled Hosseini', 2003, 'https://images.gr-assets.com/books/1484565687m/77203.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (16, 'A Game of Thrones', 'George R.R. Martin', 1996, 'https://images.gr-assets.com/books/1436732693m/13496.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (17, 'The Book Thief', 'Markus Zusak', 2005, 'https://images.gr-assets.com/books/1390053681m/19063.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (18, 'Where the Sidewalk Ends: The Poems and Drawings of Shel Silverstein', 'Shel Silverstein', 1974, 'https://images.gr-assets.com/books/1168052448m/30119.jpg');
@@ -68,8 +68,8 @@ INSERT INTO public.books (id, title, author, year, cover) VALUES (47, 'The Night
 INSERT INTO public.books (id, title, author, year, cover) VALUES (48, 'A Dance with Dragons', 'George R.R. Martin', 2011, 'https://images.gr-assets.com/books/1327885335m/10664113.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (49, 'Clockwork Prince', 'Cassandra Clare', 2011, 'https://images.gr-assets.com/books/1460477747m/10025305.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (50, 'The Wise Man''s Fear', 'Patrick Rothfuss', 2011, 'https://images.gr-assets.com/books/1452624392m/1215032.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (51, 'East of Eden  ', 'John Steinbeck', 1952, 'https://images.gr-assets.com/books/1441547516m/4406.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (52, 'The Son of Neptune ', 'Rick Riordan', 2011, 'https://images.gr-assets.com/books/1464201114m/9520360.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (51, 'East of Eden', 'John Steinbeck', 1952, 'https://images.gr-assets.com/books/1441547516m/4406.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (52, 'The Son of Neptune', 'Rick Riordan', 2011, 'https://images.gr-assets.com/books/1464201114m/9520360.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (53, 'The Mark of Athena', 'Rick Riordan', 2012, 'https://images.gr-assets.com/books/1464201354m/12127750.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (54, 'Clockwork Princess', 'Cassandra Clare', 2013, 'https://images.gr-assets.com/books/1436788488m/18335634.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (55, 'City of Lost Souls', 'Cassandra Clare', 2012, 'https://images.gr-assets.com/books/1460477703m/8755776.jpg');
@@ -90,7 +90,7 @@ INSERT INTO public.books (id, title, author, year, cover) VALUES (69, 'Mistborn 
 INSERT INTO public.books (id, title, author, year, cover) VALUES (70, 'Blood Promise', 'Richelle Mead', 2009, 'https://images.gr-assets.com/books/1442530605m/5996153.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (71, 'Spirit Bound', 'Richelle Mead', 2010, 'https://images.gr-assets.com/books/1291168967m/6479259.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (72, 'The Lorax', 'Dr. Seuss', 1971, 'https://images.gr-assets.com/books/1327879938m/7784.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (73, 'Last Sacrifice ', 'Richelle Mead', 2010, 'https://images.gr-assets.com/books/1319850978m/6527740.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (73, 'Last Sacrifice', 'Richelle Mead', 2010, 'https://images.gr-assets.com/books/1319850978m/6527740.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (74, 'City of Heavenly Fire', 'Cassandra Clare', 2014, 'https://images.gr-assets.com/books/1460477794m/8755785.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (75, 'En man som heter Ove', 'Fredrik Backman, Henning Koch', 2012, 'https://images.gr-assets.com/books/1405259930m/18774964.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (76, 'The Last Lecture', 'Randy Pausch, Jeffrey Zaslow', 2008, 'https://images.gr-assets.com/books/1388075896m/2318271.jpg');
@@ -144,7 +144,7 @@ INSERT INTO public.books (id, title, author, year, cover) VALUES (123, 'Drums of
 INSERT INTO public.books (id, title, author, year, cover) VALUES (124, 'Batman: The Dark Knight Returns', 'Frank Miller, Klaus Janson, Lynn Varley', 1986, 'https://images.gr-assets.com/books/1327892039m/59960.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (125, 'The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics', 'Daniel James Brown', 2013, 'https://images.gr-assets.com/books/1354683116m/16158542.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (126, 'Preludes & Nocturnes', 'Neil Gaiman, Sam Kieth, Mike Dringenberg, Malcolm Jones III, Todd Klein, Karen  Berger', 1989, 'https://images.gr-assets.com/books/1411609637m/23754.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (127, ' A Monster Calls ', 'Patrick Ness, Jim Kay, Siobhan Dowd', 2011, 'https://images.gr-assets.com/books/1485991317m/8621462.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (127, 'A Monster Calls', 'Patrick Ness, Jim Kay, Siobhan Dowd', 2011, 'https://images.gr-assets.com/books/1485991317m/8621462.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (128, 'Saga, Volume One', 'Brian K. Vaughan, Fiona Staples', 2012, 'https://images.gr-assets.com/books/1486028947m/15704307.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (129, 'Lonesome Dove', 'Larry McMurtry', 1985, 'https://images.gr-assets.com/books/1378573063m/256008.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (130, 'The Blood of Olympus', 'Rick Riordan', 2014, 'https://images.gr-assets.com/books/1464201441m/18705209.jpg');
@@ -160,7 +160,7 @@ INSERT INTO public.books (id, title, author, year, cover) VALUES (139, 'The Mons
 INSERT INTO public.books (id, title, author, year, cover) VALUES (140, '桜蘭高校ホスト部 1', 'Bisco Hatori', 2003, 'https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (141, 'Champion', 'Marie Lu', 2013, 'https://images.gr-assets.com/books/1382652310m/14290364.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (142, 'The Edge of Never', 'J.A. Redmerski', 2012, 'https://images.gr-assets.com/books/1358810128m/16081272.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (143, 'Batman: The Killing Joke ', 'Alan Moore, Brian Bolland, Tim Sale', 1988, 'https://images.gr-assets.com/books/1346331835m/96358.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (143, 'Batman: The Killing Joke', 'Alan Moore, Brian Bolland, Tim Sale', 1988, 'https://images.gr-assets.com/books/1346331835m/96358.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (144, 'Winter', 'Marissa Meyer', 2015, 'https://images.gr-assets.com/books/1470057036m/13206900.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (145, 'Maybe Someday', 'Colleen Hoover', 2014, 'https://images.gr-assets.com/books/1421002815m/24445517.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (146, 'The Hobbit and The Lord of the Rings', 'J.R.R. Tolkien', 1973, 'https://images.gr-assets.com/books/1346072396m/30.jpg');
@@ -172,7 +172,7 @@ INSERT INTO public.books (id, title, author, year, cover) VALUES (151, 'Onyx', '
 INSERT INTO public.books (id, title, author, year, cover) VALUES (152, 'Americanah', 'Chimamanda Ngozi Adichie', 2013, 'https://images.gr-assets.com/books/1356654499m/15796700.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (153, 'Guess How Much I Love You', 'Sam McBratney, Anita Jeram', 1988, 'https://images.gr-assets.com/books/1320457007m/301736.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (154, 'Falling Up', 'Shel Silverstein', 1996, 'https://images.gr-assets.com/books/1327871908m/30120.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (155, 'NARUTO -ナルト- 巻ノ一 ', 'Masashi Kishimoto, Katy Bridges', 1999, 'https://images.gr-assets.com/books/1435524806m/204042.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (155, 'NARUTO -ナルト- 巻ノ一', 'Masashi Kishimoto, Katy Bridges', 1999, 'https://images.gr-assets.com/books/1435524806m/204042.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (156, 'Shōgun', 'James Clavell', 1975, 'https://images.gr-assets.com/books/1397228842m/402093.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (157, 'Ugly Love', 'Colleen Hoover', 2014, 'https://images.gr-assets.com/books/1399179135m/17788401.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (158, 'Ender''s Shadow', 'Orson Scott Card', 1998, 'https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png');
@@ -191,7 +191,7 @@ INSERT INTO public.books (id, title, author, year, cover) VALUES (170, 'Guards! 
 INSERT INTO public.books (id, title, author, year, cover) VALUES (171, 'It Ends with Us', 'Colleen Hoover', 2016, 'https://images.gr-assets.com/books/1470427482m/27362503.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (172, 'Shantaram', 'Gregory David Roberts', 2003, 'https://images.gr-assets.com/books/1333482282m/33600.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (173, 'A Fine Balance', 'Rohinton Mistry', 1996, 'https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (174, ' Animal Farm & 1984', 'George Orwell, Christopher Hitchens', 1950, 'https://images.gr-assets.com/books/1327959366m/5472.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (174, 'Animal Farm & 1984', 'George Orwell, Christopher Hitchens', 1950, 'https://images.gr-assets.com/books/1327959366m/5472.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (175, 'The Complete Anne of Green Gables Boxed Set', 'L.M. Montgomery', 1908, 'https://images.gr-assets.com/books/1267721500m/3579.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (176, 'Ignite Me (Shatter Me, #3)', 'Tahereh Mafi', 2014, 'https://images.gr-assets.com/books/1375972497m/13188676.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (177, 'Lover Unbound', 'J.R. Ward', 2007, 'https://images.gr-assets.com/books/1351276662m/304027.jpg');
@@ -200,7 +200,7 @@ INSERT INTO public.books (id, title, author, year, cover) VALUES (179, 'Lover Re
 INSERT INTO public.books (id, title, author, year, cover) VALUES (180, 'The Dark Tower', 'Stephen King', 2004, 'https://images.gr-assets.com/books/1372296329m/5091.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (181, 'Opal', 'Jennifer L. Armentrout', 2012, 'https://images.gr-assets.com/books/1348200300m/13362536.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (182, 'The Complete Maus', 'Art Spiegelman', 1986, 'https://images.gr-assets.com/books/1327354180m/15195.jpg');
-INSERT INTO public.books (id, title, author, year, cover) VALUES (183, 'Maus II : And Here My Troubles Began ', 'Art Spiegelman', 1991, 'https://images.gr-assets.com/books/1327887479m/15197.jpg');
+INSERT INTO public.books (id, title, author, year, cover) VALUES (183, 'Maus II : And Here My Troubles Began', 'Art Spiegelman', 1991, 'https://images.gr-assets.com/books/1327887479m/15197.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (184, 'The Gathering Storm', 'Robert Jordan, Brandon Sanderson', 2009, 'https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (185, 'Between Shades of Gray', 'Ruta Sepetys', 2011, 'https://images.gr-assets.com/books/1327873479m/7824322.jpg');
 INSERT INTO public.books (id, title, author, year, cover) VALUES (186, '進撃の巨人 1', 'Hajime Isayama, Sheldon Drzka', 2010, 'https://images.gr-assets.com/books/1432712438m/13154150.jpg');
