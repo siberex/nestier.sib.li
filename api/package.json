@@ -28,7 +28,7 @@
     "class-validator": "^0.9.1",
     "express": "^4.16.4",
     "pg": "^7.9.0",
-    "reflect-metadata": "^0.1.13",
+    "reflect-metadata": "=0.1.12",
     "rxjs": "^6.4.0",
     "swagger-ui-express": "^4.0.2",
     "typeorm": "^0.2.16"
