@@ -3,8 +3,8 @@ create table books
     id     serial not null
             constraint books_pk
             primary key,
-    title  varchar,
-    author varchar,
+    title  varchar(300) not null,
+    author varchar(300) not null,
     year   integer,
     cover  varchar
 );

@@ -2,12 +2,12 @@ create type users_role_enum as enum ('guest', 'user', 'admin');
 
 create table users
 (
-    id    serial                                        not null
+    id    serial not null
             constraint users_pk
             primary key,
-    login varchar(200)                                  not null,
-    hash  varchar(128)                                  not null,
-    salt  varchar(32)                                   not null,
+    login varchar(200) not null,
+    hash  varchar(128) not null,
+    salt  varchar(32) not null,
     role  users_role_enum default 'user'::users_role_enum not null
 );
 
