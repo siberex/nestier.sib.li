@@ -1,9 +1,14 @@
 {
     "private": true,
-    "workspaces": [
-        "api",
-        "web"
-    ],
+    "workspaces": {
+        "packages": [
+            "api",
+            "web"
+        ],
+        "nohoist": [
+            "**/@angular/cli"
+        ]
+    },
     "scripts": {
         "deploy:gae": "gcloud app deploy dispatch.yaml web/app.yaml api/app.yaml --quiet --promote",
         "start:docker": "docker-compose up -d --force-recreate --build"
