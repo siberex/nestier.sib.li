@@ -8,17 +8,18 @@ import { BooksModule } from './books/books.module';
 import { ConfigModule, ConfigService } from './config';
 
 @Module({
-    imports: [
-        ConfigModule,
-        TypeOrmModule.forRootAsync({
-            useExisting: ConfigService,
-        }),
-        UsersModule,
-        BooksModule,
-    ],
-    controllers: [AppController],
-    providers: [AppService],
+  imports: [
+    ConfigModule,
+    TypeOrmModule.forRootAsync({
+      useExisting: ConfigService,
+    }),
+    UsersModule,
+    BooksModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {
-    constructor(private readonly connection: Connection) {}
+  constructor(private readonly connection: Connection) {
+  }
 }
