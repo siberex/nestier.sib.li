@@ -44,7 +44,6 @@
       true,
       "single"
     ],
-    "typeof-compare": true,
     "component-class-suffix": true,
     "component-selector": [
       true,
