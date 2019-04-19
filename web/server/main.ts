@@ -2,7 +2,7 @@ import { enableProdMode } from '@angular/core';
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import { AppModule } from './app.module';
+import { ApplicationModule } from './app.module';
 
 const PORT: string | number = process.env.PORT || 8080;
 
@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 
 (async () => {
   const app = await NestFactory.create<NestExpressApplication>(
-    AppModule,
+    ApplicationModule,
   );
 
   // Substitute real user IP from load balancer
