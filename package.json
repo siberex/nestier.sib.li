@@ -6,7 +6,7 @@
             "web"
         ],
         "nohoist": [
-            "**/@angular/cli",
+            "**/@angular/**",
             "**/codelyzer"
         ]
     },
