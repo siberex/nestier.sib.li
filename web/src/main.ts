@@ -1,30 +1,17 @@
 import { enableProdMode } from '@angular/core';
-import { NestFactory } from '@nestjs/core';
-import { Logger } from '@nestjs/common';
-import { NestExpressApplication } from '@nestjs/platform-express';
-import { AppModule } from './app.module';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-const PORT: string | number = process.env.PORT || 8080;
+import { AppModule } from './app/app.module';
+import { environment } from './environments/environment';
 
-if (process.env.NODE_ENV === 'production') {
+if (environment.production) {
   enableProdMode();
 }
 
-(async () => {
-  const app = await NestFactory.create<NestExpressApplication>(
-    AppModule,
-  );
-
-  // Substitute real user IP from load balancer
-  app.set('trust proxy', true);
-  app.set('x-powered-by', false);
-
-  await app.listen(PORT, () => {
-    Logger.log(`App listening on port ${PORT}`, 'HTTP');
-    Logger.log('Press Ctrl+C to quit.', 'HTTP');
-  });
-})().catch(err => {
-  process.exitCode = 1;
-  // tslint:disable-next-line:no-console
-  console.error(err);
+document.addEventListener('DOMContentLoaded', () => {
+  platformBrowserDynamic().bootstrapModule(AppModule)
+    .catch(err => {
+      // tslint:disable-next-line:no-console
+      console.error(err);
+    });
 });
