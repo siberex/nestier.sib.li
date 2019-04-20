@@ -9,15 +9,16 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "ng build",
+    "build:dev": "ng build",
+    "build:client-and-server-bundles": "ng build --prod && ng run nestier:server",
+    "build": "yarn run build:client-and-server-bundles && yarn run webpack:server",
     "deploy:gae": "gcloud app deploy --quiet --promote",
-    "gcp-build": "tsc",
-    "start:ts": "ts-node -r tsconfig-paths/register src/main.ts",
-    "start:dev": "nodemon",
-    "start": "ng serve",
-    "prestart": "yarn build",
+    "gcp-build": "yarn build",
     "lint": "ng lint",
-    "ng": "ng"
+    "ng": "ng",
+    "start": "node dist/server.js",
+    "start:dev": "ng serve",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
   "dependencies": {
     "@angular/animations": "^7.2.13",
