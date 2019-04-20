@@ -1,1 +1,137 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 2em;
+}
+
+.favorite {
+  position: relative;
+  font-size: 12pt;
+  cursor: pointer;
+
+  input {
+    appearance: none;
+    outline: none;
+    background: transparent;
+    color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    border: none;
+    border-radius: 0;
+
+    ~span:before {
+      content: '🖤';
+    }
+
+    &:checked ~span:before {
+      content: '💖';
+    }
+
+    &:checked ~span {
+      color: white;
+      text-shadow: none;
+    }
+  }
+
+  span {
+    cursor: pointer;
+
+    color: transparent;
+    text-shadow:
+     -1px -1px 0 #ccc,
+      1px -1px 0 #ccc,
+      -1px 1px 0 #ccc,
+       1px 1px 0 #ccc;
+  }
+}
+
+
+
+.list-books {
+  display: grid;
+  grid-template-columns: repeat( auto-fill, minmax(400px, 1fr) ) ;
+}
+
+.book {
+  margin-bottom: 1em;
+  margin-right: 1em;
+
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-column-gap: 0.5em;
+
+  .favorite {
+    span {
+      top: 49px;
+      left: 2px;
+      position: absolute;
+
+      opacity: 0.5;
+      color: white;
+      text-shadow:
+       -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+         1px 1px 0 white,
+    }
+
+    input:checked ~span {
+      opacity: 1;
+      $shadow-color: rgba(255,255,255,0.5);
+      text-shadow:
+       -1px -1px 0 $shadow-color,
+        1px -1px 0 $shadow-color,
+        -1px 1px 0 $shadow-color,
+         1px 1px 0 $shadow-color,
+    }
+  }
+
+  img.cover {
+    object-fit: cover;
+    width: 50px;
+    height: 75px;
+
+    // In case if there is no cover image
+    $random-color: rgb(random(255),random(255),random(255));
+    background: linear-gradient($random-color 0%, lighten($random-color, 25%) 100%);
+    background-opacity: 0;
+  }
+
+  p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12pt;
+
+    &.title {
+      font-family: 'Merriweather', serif;
+      font-size: 14pt;
+    }
+
+    &.author {
+      margin-top: 0.2em
+    }
+
+    &.year {
+      margin-top: 0.4em;
+      font-size: 10pt;
+    }
+  }
+}
+
+// Hide favorite icon behind hover only for hover-supporting devices
+@media (hover: hover) {
+  .book {
+    .favorite {
+      input:not(:checked) ~span {
+        opacity: 0;
+      }
+    }
+
+    .favorite:hover {
+      input:not(:checked) ~span {
+        opacity: 0.7;
+      }
+    }
+  }
+}
