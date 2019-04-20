@@ -6,10 +6,12 @@
             "web"
         ],
         "nohoist": [
-            "**/@angular/**",
-            "**/@angular-devkit/**",
-            "**/codelyzer",
-            "**/core-js"
+            "nestier.sib.li/@angular/**",
+            "nestier.sib.li/@angular-devkit/**",
+            "nestier.sib.li/codelyzer",
+            "nestier.sib.li/core-js",
+            "nestier.sib.li/@nestjs/core",
+            "nestier.sib.li/@nestjs/ng-universal"
         ]
     },
     "scripts": {

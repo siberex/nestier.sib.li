@@ -32,7 +32,7 @@
     "@angular/router": "^7.2.13",
     "@nestjs/common": "^6.0.5",
     "@nestjs/core": "^6.0.5",
-    "@nestjs/ng-universal": "^0.7.1",
+    "@nestjs/ng-universal": "=0.6.0",
     "@nestjs/platform-express": "^6.0.5",
     "@nguniversal/common": "^7.1.1",
     "@nguniversal/express-engine": "^7.1.1",
