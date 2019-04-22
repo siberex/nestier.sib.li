@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BooksComponent } from './components/books/books.component';
-import { FavoritesComponent } from './components/favorites/favorites.component';
-import { SigninComponent } from './components/signin/signin.component';
-import { SignupComponent } from './components/signup/signup.component';
+import { BooksComponent } from './books/books.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 import { UserLoggedGuard } from './guards/user-logged.guard';
 
 const routes: Routes = [
