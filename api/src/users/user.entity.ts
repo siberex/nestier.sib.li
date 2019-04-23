@@ -36,7 +36,8 @@ export class User {
     default: UserRole.USER,
   })
   @ApiResponseModelProperty()
-  // @ApiModelProperty({ enum: ['guest', 'user', 'admin']})
+  // Enum not supported yet: https://github.com/nestjs/swagger/issues/192
+  // @ApiResponseModelProperty({ enum: ['guest', 'user', 'admin'] })
   role: UserRole;
 
   @ManyToMany(type => Book)
