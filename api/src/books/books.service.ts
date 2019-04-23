@@ -24,6 +24,7 @@ export class BooksService {
 
     return await this.bookRepository.createQueryBuilder('book')
       .orderBy('book.year', 'DESC')
+      .addOrderBy('book.id', 'DESC')
       .skip(skip)
       .take(limit)
       .getManyAndCount();
