@@ -1,0 +1,32 @@
+nav {
+  display: flex;
+
+  margin-bottom: 2em;
+
+  .nav-item {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11pt;
+
+    font-variant: small-caps;
+    text-decoration: none;
+
+    i {
+      font-style: normal;
+      vertical-align: -2pt;
+    }
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  .nav-item + .nav-item {
+    margin-left: 2em;
+  }
+
+  .nav-item.login {
+    flex-grow: 1;
+    text-align: right;
+  }
+
+}
