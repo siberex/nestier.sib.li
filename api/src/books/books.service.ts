@@ -23,6 +23,7 @@ export class BooksService {
     const limit: number = 50;
 
     return await this.bookRepository.createQueryBuilder('book')
+      .orderBy('book.year', 'DESC')
       .skip(skip)
       .take(limit)
       .getManyAndCount();

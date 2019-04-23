@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post, Query } from '@nestjs/common';
 import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiResponseModelProperty } from '@nestjs/swagger';
 import { BooksService } from './books.service';
 import { Book } from './book.entity';
@@ -9,6 +9,8 @@ export class BookList {
   readonly books: Book[];
   @ApiResponseModelProperty()
   readonly count: number;
+  @ApiResponseModelProperty()
+  readonly skip: number;
 }
 
 @Controller('books')
@@ -25,9 +27,9 @@ export class BooksController {
 
   @Get()
   @ApiOkResponse({type: BookList})
-  async findAll(): Promise<BookList> {
-    const [books, count] = await this.booksService.findAll();
-    return {books, count};
+  async findAll(@Query('skip', new ParseIntPipe()) skip: number = 0): Promise<BookList> {
+    const [books, count] = await this.booksService.findAll(skip);
+    return {books, count, skip};
   }
 
   @Get(':id')
