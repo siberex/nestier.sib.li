@@ -3,6 +3,7 @@ import { IsInt, IsNotEmpty, IsUrl, MinLength } from 'class-validator';
 import { ApiResponseModelProperty } from '@nestjs/swagger';
 
 @Entity('books')
+@Index(['title', 'author'], { unique: true })
 export class Book {
   @PrimaryGeneratedColumn()
   @ApiResponseModelProperty({example: 1})
