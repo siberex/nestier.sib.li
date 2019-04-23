@@ -22,6 +22,7 @@ export class Book {
   author: string;
 
   @Column()
+  @Index()
   @IsInt()
   @ApiResponseModelProperty({example: 2019})
   year: number;

@@ -32,8 +32,7 @@ export class UsersService {
     return await this.userRepository.save(user);
   }
 
-  async findAll(): Promise<[User[], number]> {
-    const skip: number = 0;
+  async findAll(skip: number = 0): Promise<[User[], number]> {
     const limit: number = 10;
 
     return await this.userRepository.createQueryBuilder('user')
@@ -42,6 +41,7 @@ export class UsersService {
         'user.login',
         'user.role',
       ])
+      .orderBy('user.id', 'DESC')
       .skip(skip)
       .take(limit)
       .getManyAndCount();

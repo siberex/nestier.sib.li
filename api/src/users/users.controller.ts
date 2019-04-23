@@ -5,7 +5,7 @@ import {
   Get,
   Param,
   ParseIntPipe,
-  Post,
+  Post, Query,
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiResponseModelProperty } from '@nestjs/swagger';
@@ -18,6 +18,8 @@ export class UserList {
   readonly users: User[];
   @ApiResponseModelProperty()
   readonly count: number;
+  @ApiResponseModelProperty()
+  readonly skip: number;
 }
 
 @Controller('users')
@@ -37,9 +39,10 @@ export class UsersController {
   @Get()
   @UseInterceptors(ClassSerializerInterceptor)
   @ApiOkResponse({type: UserList})
-  async findAll(): Promise<UserList> {
-    const [users, count] = await this.usersService.findAll();
-    return {users, count};
+  // @fixme add admin-only Guard
+  async findAll(@Query('skip', new ParseIntPipe()) skip: number = 0): Promise<UserList> {
+    const [users, count] = await this.usersService.findAll(skip);
+    return {users, count, skip};
   }
 
   @Get(':id')
