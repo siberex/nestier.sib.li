@@ -1,7 +1,8 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
 import { Exclude } from 'class-transformer';
 import { ApiResponseModelProperty } from '@nestjs/swagger';
+import { Book } from '../books/book.entity';
 
 export enum UserRole {
   GUEST = 'guest',
@@ -36,6 +37,10 @@ export class User {
   })
   @ApiResponseModelProperty()
   role: UserRole;
+
+  @ManyToMany(type => Book)
+  @JoinTable()
+  books: Book[];
 
   constructor(partial?: Partial<User>) {
     Object.assign(this, partial);
