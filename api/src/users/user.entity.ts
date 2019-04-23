@@ -1,7 +1,7 @@
 import { Column, Entity, Index, PrimaryGeneratedColumn, ManyToMany, JoinTable } from 'typeorm';
 import { IsNotEmpty } from 'class-validator';
 import { Exclude } from 'class-transformer';
-import { ApiResponseModelProperty } from '@nestjs/swagger';
+import { ApiModelProperty, ApiResponseModelProperty } from '@nestjs/swagger';
 import { Book } from '../books/book.entity';
 
 export enum UserRole {
@@ -36,6 +36,7 @@ export class User {
     default: UserRole.USER,
   })
   @ApiResponseModelProperty()
+  // @ApiModelProperty({ enum: ['guest', 'user', 'admin']})
   role: UserRole;
 
   @ManyToMany(type => Book)

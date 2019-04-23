@@ -8,13 +8,15 @@ import {
   Post,
   UseInterceptors,
 } from '@nestjs/common';
-import { ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiOperation } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiResponseModelProperty } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
 
 export class UserList {
+  @ApiResponseModelProperty({ type: [User] })
   readonly users: User[];
+  @ApiResponseModelProperty()
   readonly count: number;
 }
 

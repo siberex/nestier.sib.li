@@ -1,11 +1,13 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
-import { ApiCreatedResponse, ApiOkResponse, ApiOperation } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiResponseModelProperty } from '@nestjs/swagger';
 import { BooksService } from './books.service';
 import { Book } from './book.entity';
 import { CreateBookDto } from './dto/create-book.dto';
 
 export class BookList {
+  @ApiResponseModelProperty({ type: [Book] })
   readonly books: Book[];
+  @ApiResponseModelProperty()
   readonly count: number;
 }
 
