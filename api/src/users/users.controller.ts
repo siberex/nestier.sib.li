@@ -8,19 +8,11 @@ import {
   Post, Query,
   UseInterceptors,
 } from '@nestjs/common';
-import { ApiBadRequestResponse, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiResponseModelProperty } from '@nestjs/swagger';
+import { ApiBadRequestResponse, ApiCreatedResponse, ApiImplicitQuery, ApiOkResponse, ApiOperation } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
+import { UserListDto } from './dto/user-list.dto';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
-
-export class UserList {
-  @ApiResponseModelProperty({ type: [User] })
-  readonly users: User[];
-  @ApiResponseModelProperty()
-  readonly count: number;
-  @ApiResponseModelProperty()
-  readonly skip: number;
-}
 
 @Controller('users')
 export class UsersController {
@@ -38,9 +30,10 @@ export class UsersController {
 
   @Get()
   @UseInterceptors(ClassSerializerInterceptor)
-  @ApiOkResponse({type: UserList})
+  @ApiOkResponse({type: UserListDto})
   // @fixme add admin-only Guard
-  async findAll(@Query('skip', new ParseIntPipe()) skip: number = 0): Promise<UserList> {
+  @ApiImplicitQuery({ name: 'skip', required: false, type: Number, description: 'Skip number of records' })
+  async findAll(@Query('skip', new ParseIntPipe()) skip: number = 0): Promise<UserListDto> {
     const [users, count] = await this.usersService.findAll(skip);
     return {users, count, skip};
   }
