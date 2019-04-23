@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { BooksModule } from './books/books.module';
 import { ConfigModule, ConfigService } from './config';
+import { FavoritesModule } from './favorites/favorites.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { ConfigModule, ConfigService } from './config';
     }),
     UsersModule,
     BooksModule,
+    FavoritesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
