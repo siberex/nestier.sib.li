@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Book } from './book.entity';
@@ -13,9 +13,12 @@ export class BooksService {
   }
 
   async create(bookData: CreateBookDto): Promise<Book> {
-    // @fixme Check for existing record
-    const book: Book = new Book(bookData);
+    const existing = await this.getByTitleAuthor(bookData.title, bookData.author);
+    if (existing) {
+      throw new BadRequestException('Same book already exists in the library');
+    }
 
+    const book: Book = new Book(bookData);
     return await this.bookRepository.save(book);
   }
 
@@ -30,7 +33,11 @@ export class BooksService {
       .getManyAndCount();
   }
 
-  async findOne(id: number): Promise<Book> {
+  async getById(id: number): Promise<Book> {
     return await this.bookRepository.findOne(id);
+  }
+
+  async getByTitleAuthor(title: string, author: string): Promise<Book> {
+    return await this.bookRepository.findOne({title, author});
   }
 }

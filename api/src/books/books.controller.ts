@@ -36,6 +36,6 @@ export class BooksController {
   @ApiOperation({title: 'Get book by id'})
   @ApiOkResponse({type: Book})
   async findOne(@Param('id', new ParseIntPipe()) id: number): Promise<Book> {
-    return this.booksService.findOne(id);
+    return this.booksService.getById(id);
   }
 }
