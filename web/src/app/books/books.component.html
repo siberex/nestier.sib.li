@@ -1,0 +1,14 @@
+<ul class="list-books">
+  <li *ngFor="let book of books | async" class="book">
+    <label class="favorite">
+      <img class="cover" src="{{ book.cover }}" alt="{{ book.title }}">
+      <input type="checkbox" aria-label="Favorite">
+      <span></span>
+    </label>
+    <div class="details">
+      <p class="title">{{ book.title }}</p>
+      <p class="author">{{ book.author }}</p>
+      <p class="year">{{ book.year }}</p>
+    </div>
+  </li>
+</ul>
