@@ -19,8 +19,13 @@ export class BooksService {
     return await this.bookRepository.save(book);
   }
 
-  async findAll(): Promise<Book[]> {
-    return await this.bookRepository.find();
+  async findAll(skip: number = 0): Promise<[Book[], number]> {
+    const limit: number = 50;
+
+    return await this.bookRepository.createQueryBuilder('book')
+      .skip(skip)
+      .take(limit)
+      .getManyAndCount();
   }
 
   async findOne(id: number): Promise<Book> {

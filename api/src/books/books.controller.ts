@@ -4,6 +4,11 @@ import { BooksService } from './books.service';
 import { Book } from './book.entity';
 import { CreateBookDto } from './dto/create-book.dto';
 
+export class BookList {
+  readonly books: Book[];
+  readonly count: number;
+}
+
 @Controller('books')
 export class BooksController {
   constructor(private readonly booksService: BooksService) {
@@ -17,9 +22,10 @@ export class BooksController {
   }
 
   @Get()
-  @ApiOkResponse({type: [Book]})
-  async findAll(): Promise<Book[]> {
-    return this.booksService.findAll();
+  @ApiOkResponse({type: BookList})
+  async findAll(): Promise<BookList> {
+    const [books, count] = await this.booksService.findAll();
+    return {books, count};
   }
 
   @Get(':id')

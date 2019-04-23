@@ -13,6 +13,11 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
 
+export class UserList {
+  readonly users: User[];
+  readonly count: number;
+}
+
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {
@@ -29,9 +34,10 @@ export class UsersController {
 
   @Get()
   @UseInterceptors(ClassSerializerInterceptor)
-  @ApiOkResponse({type: [User]})
-  async findAll(): Promise<User[]> {
-    return this.usersService.findAll();
+  @ApiOkResponse({type: UserList})
+  async findAll(): Promise<UserList> {
+    const [users, count] = await this.usersService.findAll();
+    return {users, count};
   }
 
   @Get(':id')
