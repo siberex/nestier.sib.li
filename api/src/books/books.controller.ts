@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post, Query } from '@nestjs/common';
-import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiResponseModelProperty } from '@nestjs/swagger';
+import { ApiCreatedResponse, ApiImplicitQuery, ApiOkResponse, ApiOperation, ApiResponseModelProperty } from '@nestjs/swagger';
 import { BooksService } from './books.service';
 import { Book } from './book.entity';
 import { CreateBookDto } from './dto/create-book.dto';
@@ -26,7 +26,9 @@ export class BooksController {
   }
 
   @Get()
+  @ApiOperation({title: 'Get list of books'})
   @ApiOkResponse({type: BookList})
+  @ApiImplicitQuery({ name: 'skip', required: false, type: Number, description: 'Skip number of records' })
   async findAll(@Query('skip', new ParseIntPipe()) skip: number = 0): Promise<BookList> {
     const [books, count] = await this.booksService.findAll(skip);
     return {books, count, skip};
