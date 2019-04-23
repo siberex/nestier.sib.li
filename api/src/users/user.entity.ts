@@ -22,11 +22,11 @@ export class User {
   @ApiResponseModelProperty()
   login: string;
 
-  @Column({length: 128})
+  @Column({length: 128, select: false})
   @Exclude()
   hash: string;
 
-  @Column({length: 32})
+  @Column({length: 32, select: false})
   @Exclude()
   salt: string;
 
