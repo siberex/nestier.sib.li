@@ -1,22 +1,23 @@
 nav {
   display: flex;
 
-  margin-bottom: 2em;
-
   .nav-item {
     font-family: 'Roboto', sans-serif;
     font-size: 11pt;
 
-    font-variant: small-caps;
-    text-decoration: none;
+    a {
+      font-variant: small-caps;
+      text-decoration: none;
 
-    i {
-      font-style: normal;
-      vertical-align: -2pt;
-    }
+      i {
+        font-style: normal;
+        vertical-align: -2pt;
+        margin-right: 0.3em;
+      }
 
-    span {
-      text-decoration: underline;
+      span {
+        text-decoration: underline;
+      }
     }
   }
 

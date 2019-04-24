@@ -47,7 +47,11 @@
 // Page-specific classes
 .list-books {
   display: grid;
-  grid-template-columns: repeat( auto-fill, minmax(400px, 1fr) ) ;
+  grid-template-columns: repeat( auto-fill, minmax(400px, 1fr) );
+
+  padding: 0;
+  margin-left: 2em;
+  margin-top: 2em;
 }
 
 .book {
@@ -97,11 +101,11 @@
   p {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 12pt;
+    font-size: 11pt;
 
     &.title {
       font-family: 'Merriweather', serif;
-      font-size: 14pt;
+      font-size: 13pt;
     }
 
     &.author {

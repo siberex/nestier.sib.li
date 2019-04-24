@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather|Roboto');
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
-  margin: 2em;
+  padding: 2em;
+  box-sizing: border-box;
 
   font-family: 'Roboto', sans-serif;
   font-size: 11pt;

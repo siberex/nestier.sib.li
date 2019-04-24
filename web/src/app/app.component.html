@@ -1,6 +1,12 @@
 <nav>
-  <a class="nav-item" routerLink="/books"><i>📚️</i><span>Books</span></a>
-  <a class="nav-item" routerLink="/favorites"><i>⭐</i> <span>Favorites</span></a>
-  <a class="nav-item login" routerLink="/login"><i>👩‍💻</i> <span>Sign In</span></a>
+  <div class="nav-item">
+    <a routerLink="/books"><i>📚️</i><span>Books</span></a>
+  </div>
+  <div class="nav-item">
+    <a routerLink="/favorites"><i>⭐</i><span>Favorites</span></a>
+  </div>
+  <div class="nav-item login">
+    <a routerLink="/login"><i>👩‍💻</i><span>Sign In</span></a>
+  </div>
 </nav>
 <router-outlet></router-outlet>
