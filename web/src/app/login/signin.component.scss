@@ -1,0 +1,55 @@
+.container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 11pt;
+
+  form {
+    width: 400px;
+
+    background-color: #eee;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+    padding: 2em;
+
+    label {
+      display: block;
+      width: 100%;
+
+      color: #555;
+
+      margin: 0 0 1em 0;
+    }
+
+    input {
+      display: block;
+      width: calc(400px - 4px - 2em);
+
+      padding: 1em;
+      margin: 0;
+    }
+
+    button {
+      width: 100%;
+      cursor: pointer;
+
+      padding: 1em;
+
+      margin: 1em 0 0 0;
+
+    }
+
+    .message {
+      margin: 2em 0 0 0;
+
+      text-align: center;
+      color: #555;
+    }
+
+  }
+
+}

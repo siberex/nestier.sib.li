@@ -1,3 +1,20 @@
-<p>
-  signup works!
-</p>
+
+<div class="container-login">
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+
+    <label>
+      Login:
+      <input name="login" ngModel required type="text" placeholder="login">
+    </label>
+    <label>
+      Password:
+      <input name="password" ngModel required type="password" placeholder="password">
+    </label>
+
+    <button>Sign Up</button>
+
+    <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
+  </form>
+
+</div>

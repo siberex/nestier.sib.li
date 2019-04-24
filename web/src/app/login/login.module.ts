@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginService } from '../services/login.service';
-import { SigninComponent } from './signin.component';
 import { LoginCreateComponent } from './login-create/login-create.component';
+import { SigninComponent } from './signin.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LoginCreateComponent } from './login-create/login-create.component';
       { path: '', component: SigninComponent, pathMatch: 'full' },
       { path: 'create', component: LoginCreateComponent, pathMatch: 'full' },
     ]),
+    FormsModule,
   ],
   providers: [
     LoginService,
