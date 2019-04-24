@@ -3,6 +3,8 @@
 - Add Webpack HMR for dev
   https://docs.nestjs.com/techniques/hot-reload
 
+- Add JWT auth with related guards
+
 
 ### Web
 
