@@ -9,6 +9,9 @@
 
 - Add config environment variable to disable swagger docs on prod
 
+#### Bugs:
+
+  - Remove `?skip=n` query param requirement from `/books` path
 
 ### Web
 
