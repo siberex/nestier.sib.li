@@ -59,8 +59,12 @@ export class ConfigService implements TypeOrmOptionsFactory {
       username: this.get('POSTGRES_USER') as string || 'postgres',
       password: this.get('POSTGRES_PASSWORD') as string || '',
       database: this.get('POSTGRES_DB') as string || 'test',
+      // Note: glob pattern *.ts will not work with Hot Module Reloading:
+      // https://github.com/nestjs/nest/issues/711
       // entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       entities: [Book, User],
+      // Reuse the same connection between rebuilds (for HMR):
+      keepConnectionAlive: this.isDev(),
       synchronize: syncSchema,
       ssl: useSSL,
     };

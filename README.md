@@ -56,20 +56,27 @@ https://nestier.sib.li/api/doc/
         docker-compose down
 
 
-### Run locally
+### Run dev server locally
 
 1. [Install yarn](https://yarnpkg.com/en/docs/install)
 
-2.1 Run API (`cd api`) with webpack Hot Module Reloading:
+2. Run API (`cd api`):
+ 
+    1. With Webpack Hot Module Reloading:
 
-    - `yarn start:webpack`
-    - `yarn start`
+        - Run Webpack watcher to [partially recompile](https://github.com/nestjs/nest/issues/442) changed files only when some code get changed:
+  
+              yarn start:webpack
+        
+        - Run server (main module will be reloaded automatically on each recompile):
+  
+              yarn start
 
-2.2 Run API with nodemon (will recompile all on code changes):
+    2. **OR** with nodemon (will recompile all sources when some code get changed):
 
-    yarn start:dev
-    
+            yarn start:dev
+
 3. Run Web (`cd web`):
 
-    yarn start:dev
+        yarn start:dev
 
