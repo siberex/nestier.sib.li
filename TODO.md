@@ -11,7 +11,7 @@
 
 #### Bugs:
 
-  - Remove `?skip=n` query param requirement from `/books` path
+  + Remove `?skip=n` query param requirement from `/books` path
 
 ### Web
 
