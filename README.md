@@ -25,7 +25,7 @@ https://nestier.sib.li/api/doc/
 
             gcloud init
         
-    - Or get/set Project ID for existing profile:
+    - Or check and set Project ID for existing profile:
 
             gcloud config get-value project
             gcloud config set project YOUR-PROJECT-ID
