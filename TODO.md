@@ -23,6 +23,9 @@
 
 - Add static handlers for App Engine deployment (Web)
 
+- Try Google Cloud Run
+  https://cloud.google.com/run/docs/quickstarts/build-and-deploy
+
 
 ### General
 
