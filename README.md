@@ -9,17 +9,13 @@ Sandbox app to play with [Nest framework](https://github.com/nestjs/nest)
 
 api — API service with Nest.js and [TypeORM](https://typeorm.io/).
 
-web — Angular Universal app which connects to the api.
+web — Angular Universal app which connects to the API.
 
 
 ### API doc
 
 https://nestier.sib.li/api/doc/
 
-
-### Prerequisites
-
-- [Install yarn](https://yarnpkg.com/en/docs/install)
 
 ### Google App Engine deployment
 
@@ -58,3 +54,22 @@ https://nestier.sib.li/api/doc/
     To stop containers, run:
 
         docker-compose down
+
+
+### Run locally
+
+1. [Install yarn](https://yarnpkg.com/en/docs/install)
+
+2.1 Run API (`cd api`) with webpack Hot Module Reloading:
+
+    - `yarn start:webpack`
+    - `yarn start`
+
+2.2 Run API with nodemon (will recompile all on code changes):
+
+    yarn start:dev
+    
+3. Run Web (`cd web`):
+
+    yarn start:dev
+
