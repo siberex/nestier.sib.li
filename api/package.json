@@ -16,7 +16,8 @@
     "start:dev": "nodemon",
     "start": "node dist/main",
     "prestart": "yarn build",
-    "lint": "tslint -p ."
+    "lint": "tslint -p .",
+    "webpack": "rimraf dist && webpack --config webpack.config.js"
   },
   "dependencies": {
     "@nestjs/common": "^6.2.0",

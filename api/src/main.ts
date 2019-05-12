@@ -6,6 +6,8 @@ import { AppModule } from './app.module';
 
 // App Engine deployment should use process.env.PORT
 const PORT: string | number = process.env.API_PORT || process.env.PORT || 8081;
+// HMR for dev server
+declare const module: any;
 
 (async () => {
   const app = await NestFactory.create<NestExpressApplication>(
@@ -49,6 +51,12 @@ const PORT: string | number = process.env.API_PORT || process.env.PORT || 8081;
     Logger.log(`App listening on port ${PORT}`, 'HTTP');
     Logger.log('Press Ctrl+C to quit.', 'HTTP');
   });
+
+  // HMR for dev server
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 })().catch(err => {
   process.exitCode = 1;
   // tslint:disable-next-line:no-console
