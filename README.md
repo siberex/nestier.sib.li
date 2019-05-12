@@ -62,17 +62,15 @@ https://nestier.sib.li/api/doc/
 
 2. Run API (`cd api`):
  
-    1. With Webpack Hot Module Reloading:
-
-        - Run Webpack watcher to [partially recompile](https://github.com/nestjs/nest/issues/442) changed files only when some code get changed:
+    1. With Webpack Hot Module Reloading:        
   
-              yarn start:webpack
+            yarn start:hmr
+            
+        Webpack watcher will [partially recompile](https://github.com/nestjs/nest/issues/442) only changed sources when some code got changed.
         
-        - Run server (main module will be reloaded automatically on each recompile):
-  
-              yarn start
+        After first build it will launch compiled `dist/main.js` (which will be reloaded automatically on subsequent builds).
 
-    2. **OR** with ts-node-dev (will recompile all sources when some code get changed):
+    2. **OR** with ts-node-dev (will recompile all sources when some code got changed):
 
             yarn start:dev
 

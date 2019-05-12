@@ -13,4 +13,4 @@ RUN \
 
 USER nodejs
 
-CMD ["yarn", "start:dev"]
+CMD ["yarn", "start:hmr"]

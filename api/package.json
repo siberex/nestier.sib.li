@@ -14,8 +14,8 @@
     "gcp-build": "tsc",
     "start:nodemon": "nodemon",
     "start:dev": "ts-node-dev --notify=false --respawn --transpileOnly --ignore-watch node_modules -- src/main.ts",
+    "start:hmr": "rimraf dist && webpack --config webpack.config.js",
     "start": "node dist/main",
-    "start:webpack": "rimraf dist && webpack --config webpack.config.js",
     "lint": "tslint -p ."
   },
   "dependencies": {
@@ -46,6 +46,7 @@
     "typescript": "^3.4.5",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
   }
 }
