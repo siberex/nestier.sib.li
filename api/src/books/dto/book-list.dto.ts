@@ -1,7 +1,7 @@
 import { IsInt, IsOptional, IsPositive } from 'class-validator';
 import { ApiModelPropertyOptional } from '@nestjs/swagger';
 
-export class UserListDto {
+export class BookListDto {
   @IsInt()
   @IsPositive()
   @IsOptional()

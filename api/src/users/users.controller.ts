@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 import { ApiBadRequestResponse, ApiCreatedResponse, ApiImplicitQuery, ApiOkResponse, ApiOperation } from '@nestjs/swagger';
 import { CreateUserDto } from './dto/create-user.dto';
+import { UserListResultDto } from './dto/user-list-result.dto';
 import { UserListDto } from './dto/user-list.dto';
 import { UsersService } from './users.service';
 import { User } from './user.entity';
@@ -30,12 +31,11 @@ export class UsersController {
 
   @Get()
   @UseInterceptors(ClassSerializerInterceptor)
-  @ApiOkResponse({type: UserListDto})
+  @ApiOkResponse({type: UserListResultDto})
   // @fixme add admin-only Guard
-  @ApiImplicitQuery({ name: 'skip', required: false, type: Number, description: 'Skip number of records' })
-  async findAll(@Query('skip', new ParseIntPipe()) skip: number = 0): Promise<UserListDto> {
-    const [users, count] = await this.usersService.findAll(skip);
-    return {users, count, skip};
+  async findAll(@Query() params: UserListDto): Promise<UserListResultDto> {
+    const [users, count] = await this.usersService.findAll(params.skip);
+    return {users, count, skip: params.skip};
   }
 
   @Get(':id')
