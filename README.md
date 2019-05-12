@@ -72,7 +72,7 @@ https://nestier.sib.li/api/doc/
   
               yarn start
 
-    2. **OR** with nodemon (will recompile all sources when some code get changed):
+    2. **OR** with ts-node-dev (will recompile all sources when some code get changed):
 
             yarn start:dev
 

@@ -12,7 +12,8 @@
     "build": "rimraf dist && tsc",
     "deploy:gae": "gcloud app deploy --quiet --promote",
     "gcp-build": "tsc",
-    "start:dev": "nodemon",
+    "start:nodemon": "nodemon",
+    "start:dev": "ts-node-dev --notify=false --respawn --transpileOnly --ignore-watch node_modules -- src/main.ts",
     "start": "node dist/main",
     "start:webpack": "rimraf dist && webpack --config webpack.config.js",
     "lint": "tslint -p ."
@@ -39,6 +40,7 @@
     "rimraf": "^2.6.3",
     "ts-loader": "^6.0.0",
     "ts-node": "^8.1.0",
+    "ts-node-dev": "^1.0.0-pre.39",
     "tsconfig-paths": "^3.8.0",
     "tslint": "^5.16.0",
     "typescript": "^3.4.5",
