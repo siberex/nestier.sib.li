@@ -10,7 +10,9 @@ import { FavoritesModule } from './favorites/favorites.module';
 @Module({
   imports: [
     ConfigModule,
+    // https://github.com/nestjs/nest/issues/530#issuecomment-415690676
     TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
       useExisting: ConfigService,
     }),
     UsersModule,
