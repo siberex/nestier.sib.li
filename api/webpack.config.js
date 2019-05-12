@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const WebpackShellPlugin = require('webpack-shell-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin-next');
 
 module.exports = {
   entry: ['webpack/hot/poll?100', './src/main.ts'],
@@ -28,7 +28,9 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new WebpackShellPlugin({
-      onBuildEnd: ['node dist/main']
+      onBuildEnd: {
+        scripts: ['node dist/main']
+      }
     })
   ],
   output: {
