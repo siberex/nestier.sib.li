@@ -44,7 +44,7 @@ https://nestier.sib.li/api/doc/
 
 3. Deploy (version will be set to `prod-1`)
 
-        yarn deploy:gae -v prod-1
+        gcloud app deploy dispatch.yaml web/app.yaml api/app.yaml --quiet --promote -v prod-1
 
 
 ### Run locally with Docker
@@ -53,7 +53,7 @@ https://nestier.sib.li/api/doc/
 
 2. Run:
 
-        yarn start:docker
+        docker-compose up -d --force-recreate --build
 
     To stop containers, run:
 
