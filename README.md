@@ -25,8 +25,9 @@ https://nestier.sib.li/api/doc/
 
             gcloud init
         
-    - Or set Project ID for existing profile:
+    - Or get/set Project ID for existing profile:
 
+            gcloud config get-value project
             gcloud config set project YOUR-PROJECT-ID
 
 2. Create `api/app.env.yaml` files based on `api/app.env.example.yaml` and set DB settings.
