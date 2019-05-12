@@ -26,6 +26,7 @@ declare const module: any;
   // Validate DTO classes for all requests
   app.useGlobalPipes(new ValidationPipe({
     forbidNonWhitelisted: true,
+    // Automatically transform request payloads to the corresponding DTO classes.
     transform: true,
     validationError: {target: false},
   }));
