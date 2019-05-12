@@ -29,7 +29,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new WebpackShellPlugin({
       onBuildEnd: {
-        scripts: ['node dist/main']
+        scripts: ['nodemon --config "" --watch dist/main.js dist/main.js']
       }
     })
   ],
