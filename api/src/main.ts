@@ -34,7 +34,10 @@ declare const module: any;
   // Add Swagger api doc
   const swaggerOptions = new DocumentBuilder()
     .setTitle('Nestier API')
-    .setVersion('1.0');
+    .setVersion('1.0')
+    .setSchemes(process.env.NODE_ENV === 'production' ? 'https' : 'http')
+    .addBearerAuth();
+
   let swaggerPath = 'doc';
   if ('GAE_SERVICE' in process.env && process.env.GAE_SERVICE === 'api') {
     swaggerOptions.setBasePath('api');
