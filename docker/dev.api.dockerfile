@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:10-alpine
 
 WORKDIR /app
 
@@ -12,5 +12,8 @@ RUN \
   chown -R nodejs /home/nodejs
 
 USER nodejs
+
+ENV API_PORT 8081
+EXPOSE $API_PORT 8081
 
 CMD ["yarn", "start:hmr"]
