@@ -52,6 +52,8 @@ export class ConfigService implements TypeOrmOptionsFactory {
       syncSchema = this.isDev();
     }
 
+    const fileExtension = this.isProd() ? 'js' : 'ts';
+
     return {
       type: 'postgres',
       host: this.get('POSTGRES_HOST') as string || 'localhost',

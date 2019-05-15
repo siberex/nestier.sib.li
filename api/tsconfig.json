@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "declaration": true,
+    "declaration": false,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es6",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "@nestier/interceptors/*": ["./src/interceptors/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
