@@ -13,7 +13,7 @@
     "deploy:gae": "gcloud app deploy --quiet --promote",
     "gcp-build": "tsc",
     "start:nodemon": "nodemon",
-    "start:dev": "ts-node-dev --notify=false --respawn --transpileOnly --ignore-watch node_modules -- src/main.ts",
+    "start:dev": "ts-node-dev -r tsconfig-paths/register --notify=false --respawn --transpileOnly --ignore-watch node_modules -- src/main.ts",
     "start:hmr": "webpack --config webpack.config.js",
     "start": "node dist/main",
     "lint": "tslint -p ."
