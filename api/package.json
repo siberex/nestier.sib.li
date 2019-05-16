@@ -15,7 +15,7 @@
     "start:nodemon": "nodemon",
     "start:dev": "ts-node-dev -r tsconfig-paths/register --notify=false --respawn --transpileOnly --ignore-watch node_modules -- src/main.ts",
     "start:hmr": "webpack --config webpack.config.js",
-    "start": "node dist/main",
+    "start": "node -r ./tsconfig-paths.register.js dist/main.js",
     "lint": "tslint -p ."
   },
   "dependencies": {

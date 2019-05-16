@@ -8,9 +8,9 @@
     "target": "es6",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
-      "@nestier/interceptors/*": ["./src/interceptors/*"]
+      "@nestier/interceptors/*": ["./interceptors/*"]
     }
   },
   "include": ["src/**/*"],
