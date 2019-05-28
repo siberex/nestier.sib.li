@@ -63,19 +63,22 @@ export class HashService {
   /**
    *
    * @param checkPassword
-   * @param hash
+   * @param hashBase64
    */
-  static async verify(checkPassword: string, hash: string): Promise<boolean> {
+  static async verify(checkPassword: string, hashBase64: string): Promise<boolean> {
     try {
-      const buffer = Buffer.from(hash, 'base64');
-      const stored = {
-        salt: new Uint8Array(buffer, 0, SALT_LENGTH),
-        hash: new Uint8Array(buffer, SALT_LENGTH, SCRYPT_KEY_LENGTH),
-      };
+      const buffer = Buffer.from(hashBase64, 'base64');
 
-      const checkHash = await HashService._hash(checkPassword, stored.salt);
+      if (buffer.length < SALT_LENGTH + SCRYPT_KEY_LENGTH) {
+        return false;
+      }
 
-      return timingSafeEqual(checkHash, stored.hash);
+      const salt = buffer.slice(0, SALT_LENGTH);
+      const hash = buffer.slice(SALT_LENGTH, SALT_LENGTH + SCRYPT_KEY_LENGTH);
+
+      const checkHash = await HashService._hash(checkPassword, salt);
+
+      return timingSafeEqual(checkHash, hash);
     } catch (e) {
       return false;
     }
