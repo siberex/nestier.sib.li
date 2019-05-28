@@ -25,7 +25,7 @@ const SCRYPT_OPT_MAXMEM = 256 * SCRYPT_OPT_COST * SCRYPT_OPT_BLOCK_SIZE; // 64 *
 
 export class HashService {
 
-  static async hash(
+  protected static async _hash(
     password: string | Buffer | NodeJS.TypedArray | DataView,
     salt: string | Buffer | NodeJS.TypedArray | DataView,
   ): Promise<Buffer> {
@@ -43,9 +43,9 @@ export class HashService {
    * Key Derivation Function
    * @param password
    */
-  static async kdf(password: string): Promise<string> {
+  static async hash(password: string): Promise<string> {
     const salt = randomBytes(SALT_LENGTH);
-    const hash = await HashService.hash(password, salt);
+    const hash = await HashService._hash(password, salt);
 
     // Derived key structure definition
     const buffer = new ArrayBuffer(SALT_LENGTH + SCRYPT_KEY_LENGTH);
@@ -73,7 +73,7 @@ export class HashService {
         hash: new Uint8Array(buffer, SALT_LENGTH, SCRYPT_KEY_LENGTH),
       };
 
-      const checkHash = await HashService.hash(checkPassword, stored.salt);
+      const checkHash = await HashService._hash(checkPassword, stored.salt);
 
       return timingSafeEqual(checkHash, stored.hash);
     } catch (e) {
