@@ -9,6 +9,12 @@
 
 - Add config environment variable to disable swagger docs on prod
 
+- replace crypto.pbkdf2 with crypto.scrypt for passwords hashing
+    - use await with promise, not bare *Sync methods 
+    - possibly with kdf() and verify() wrappers for HMAC addition:
+        https://github.com/chrisveness/scrypt-kdf/blob/master/scrypt.js
+    - use crypto.timingSafeEqual() for verification
+
 #### Bugs:
 
   + Remove `?skip=n` query param requirement from `/books` path
@@ -19,6 +25,12 @@
 
 - Add "Add book" UI
 
+- Minor frontend stuff:
+
+  - add Font-display prop to Google Fonts loader
+
+  - add loading="lazy" for images 
+  
 
 ### Deployment
 
