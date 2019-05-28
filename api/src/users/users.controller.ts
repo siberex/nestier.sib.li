@@ -9,6 +9,7 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiBadRequestResponse, ApiCreatedResponse, ApiImplicitQuery, ApiOkResponse, ApiOperation } from '@nestjs/swagger';
+import { HashService } from '../auth/hash.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserListResultDto } from './dto/user-list-result.dto';
 import { UserListDto } from './dto/user-list.dto';
@@ -18,6 +19,22 @@ import { User } from './user.entity';
 @Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {
+  }
+
+  @Get('hash')
+  // @fixme remove debug
+  async debugHash(@Query('password') password: string): Promise<object> {
+    const hash = await HashService.hash(password);
+    return {
+      hash,
+      uri: `/verify/?password=${password}&hash=${encodeURIComponent(hash)}`,
+    };
+  }
+
+  @Get('verify')
+  // @fixme remove debug
+  async debugVerify(@Query('password') password: string, @Query('hash') hash: string): Promise<boolean> {
+    return await HashService.verify(password, hash);
   }
 
   @Post()
