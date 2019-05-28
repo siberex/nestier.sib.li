@@ -11,7 +11,7 @@ type ScryptFn = (
 const scrypt: ScryptFn = promisify(scryptCallback);
 
 // https://nodejs.org/api/crypto.html#crypto_crypto_scrypt_password_salt_keylen_options_callback
-const SALT_LENGTH = 32;
+const SALT_LENGTH = 24;
 const SCRYPT_KEY_LENGTH = 32;
 // Must be a power of two greater than one. Default is 2**14 = 16384
 const SCRYPT_OPT_COST = 2 ** 15;
@@ -47,17 +47,10 @@ export class HashService {
     const salt = randomBytes(SALT_LENGTH);
     const hash = await HashService._hash(password, salt);
 
-    // Derived key structure definition
-    const buffer = new ArrayBuffer(SALT_LENGTH + SCRYPT_KEY_LENGTH);
-    const struct = {
-      salt: new Uint8Array(buffer, 0, SALT_LENGTH),
-      hash: new Uint8Array(buffer, SALT_LENGTH, SCRYPT_KEY_LENGTH),
-    };
-
-    struct.salt.set(salt);
-    struct.hash.set(hash);
-
-    return Buffer.from(buffer).toString('base64');
+    return [
+      salt.toString('base64'),
+      hash.toString('base64'),
+    ].join('.');
   }
 
   /**
@@ -65,16 +58,12 @@ export class HashService {
    * @param checkPassword
    * @param hashBase64
    */
-  static async verify(checkPassword: string, hashBase64: string): Promise<boolean> {
+  static async verify(checkPassword: string, saltWithHash: string): Promise<boolean> {
     try {
-      const buffer = Buffer.from(hashBase64, 'base64');
+      const[b64salt, b64hash] = saltWithHash.split('.');
 
-      if (buffer.length < SALT_LENGTH + SCRYPT_KEY_LENGTH) {
-        return false;
-      }
-
-      const salt = buffer.slice(0, SALT_LENGTH);
-      const hash = buffer.slice(SALT_LENGTH, SALT_LENGTH + SCRYPT_KEY_LENGTH);
+      const salt = Buffer.from(b64salt, 'base64');
+      const hash = Buffer.from(b64hash, 'base64');
 
       const checkHash = await HashService._hash(checkPassword, salt);
 
