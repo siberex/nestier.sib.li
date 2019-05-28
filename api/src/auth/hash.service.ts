@@ -42,6 +42,7 @@ export class HashService {
   /**
    * Key Derivation Function
    * @param password
+   * @return base64-encoded salt.hash pair separated with dot (.)
    */
   static async hash(password: string): Promise<string> {
     const salt = randomBytes(SALT_LENGTH);
@@ -56,7 +57,8 @@ export class HashService {
   /**
    *
    * @param checkPassword
-   * @param hashBase64
+   * @param saltWithHash base64-encoded salt.hash pair separated with dot (.)
+   * @return false on password mismatch or decoding error
    */
   static async verify(checkPassword: string, saltWithHash: string): Promise<boolean> {
     try {
