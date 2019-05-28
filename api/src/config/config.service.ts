@@ -52,8 +52,6 @@ export class ConfigService implements TypeOrmOptionsFactory {
       syncSchema = this.isDev();
     }
 
-    const fileExtension = this.isProd() ? 'js' : 'ts';
-
     return {
       type: 'postgres',
       host: this.get('POSTGRES_HOST') as string || 'localhost',
@@ -71,6 +69,7 @@ export class ConfigService implements TypeOrmOptionsFactory {
       keepConnectionAlive: this.isDev(),
       synchronize: syncSchema,
       ssl: useSSL,
+      logging: ['error', 'migration', 'warn'],
     };
   }
 }
