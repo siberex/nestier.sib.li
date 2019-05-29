@@ -15,6 +15,10 @@
         https://github.com/chrisveness/scrypt-kdf/blob/master/scrypt.js
     - use crypto.timingSafeEqual() for verification
 
+- add health checks with terminus: https://docs.nestjs.com/recipes/terminus
+
+- add tests
+
 #### Bugs:
 
   + Remove `?skip=n` query param requirement from `/books` path
