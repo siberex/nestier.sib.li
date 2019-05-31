@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
+import { isEnabled, isDev, isProd } from './env.service';
 import { Book } from '../books/book.entity';
 import { User } from '../users/user.entity';
 
@@ -11,14 +12,6 @@ export class ConfigService implements TypeOrmOptionsFactory {
   constructor(env: string = process.env.NODE_ENV || 'production') {
     this.environment = env;
     this.config = {};
-  }
-
-  isDev(): boolean {
-    return this.environment === 'development';
-  }
-
-  isProd(): boolean {
-    return this.environment === 'production';
   }
 
   env(): string {
@@ -36,21 +29,8 @@ export class ConfigService implements TypeOrmOptionsFactory {
   }
 
   createTypeOrmOptions(): TypeOrmModuleOptions {
-    const regexIsOn: RegExp = /(true|on|1)/gi;
-
-    let useSSL: boolean = false;
-    if (this.get('POSTGRES_SSL')) {
-      useSSL = regexIsOn.test(this.get('POSTGRES_SSL') as string);
-    } else {
-      useSSL = this.isProd();
-    }
-
-    let syncSchema: boolean = false;
-    if (this.get('POSTGRES_SYNC_SCHEMA')) {
-      syncSchema = regexIsOn.test(this.get('POSTGRES_SYNC_SCHEMA') as string);
-    } else {
-      syncSchema = this.isDev();
-    }
+    const useSSL = isEnabled('POSTGRES_SSL') || isProd();
+    const syncSchema = isEnabled('POSTGRES_SYNC_SCHEMA') || isDev();
 
     return {
       type: 'postgres',
@@ -66,7 +46,7 @@ export class ConfigService implements TypeOrmOptionsFactory {
       // entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       entities: [Book, User],
       // Reuse the same connection between rebuilds (for HMR):
-      keepConnectionAlive: this.isDev(),
+      keepConnectionAlive: isDev(),
       synchronize: syncSchema,
       ssl: useSSL,
       logging: ['error', 'migration', 'warn'],

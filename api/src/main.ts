@@ -3,6 +3,7 @@ import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { isEnabled, isDev } from './config/env.service';
 
 // App Engine deployment should use process.env.PORT
 const PORT: string | number = process.env.API_PORT || process.env.PORT || 8081;
@@ -35,7 +36,7 @@ declare const module: any;
   const swaggerOptions = new DocumentBuilder()
     .setTitle('Nestier API')
     .setVersion('1.0')
-    .setSchemes(process.env.NODE_ENV === 'production' ? 'https' : 'http')
+    .setSchemes(isDev() ? 'http' : 'https')
     .addBearerAuth();
 
   let swaggerPath = 'doc';
@@ -47,7 +48,7 @@ declare const module: any;
   const apiDoc = SwaggerModule.createDocument(app, swaggerOptions.build());
   SwaggerModule.setup(swaggerPath, app, apiDoc);
 
-  if ('API_ENABLE_CORS' in process.env && /(true|on|1)/gi.test(process.env.API_ENABLE_CORS)) {
+  if (isEnabled('API_ENABLE_CORS')) {
     app.enableCors();
   }
 
