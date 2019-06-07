@@ -6,19 +6,19 @@ update_configs:
   - package_manager: "javascript"
     directory: "/api"
     update_schedule: "weekly"
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "security:patch"
+#    automerged_updates:
+#      - match:
+#          dependency_type: "all"
+#          update_type: "security:patch"
     default_reviewers:
       - "siberex"
 
   - package_manager: "javascript"
     directory: "/web"
     update_schedule: "weekly"
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "security:patch"
+#    automerged_updates:
+#      - match:
+#          dependency_type: "all"
+#          update_type: "security:patch"
     default_reviewers:
       - "siberex"
