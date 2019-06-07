@@ -19,14 +19,14 @@
     "lint": "tslint -p ."
   },
   "dependencies": {
-    "@nestjs/common": "^6.2.0",
-    "@nestjs/core": "^6.2.0",
-    "@nestjs/platform-express": "^6.2.0",
+    "@nestjs/common": "^6.3.1",
+    "@nestjs/core": "^6.3.1",
+    "@nestjs/platform-express": "^6.3.1",
     "@nestjs/swagger": "^3.0.2",
-    "@nestjs/typeorm": "^6.1.1",
-    "class-transformer": "^0.2.0",
+    "@nestjs/typeorm": "^6.1.2",
+    "class-transformer": "^0.2.3",
     "class-validator": "^0.9.1",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "pg": "^7.9.0",
     "reflect-metadata": "=0.1.12",
     "rxjs": "^6.5.2",
@@ -35,7 +35,7 @@
     "typeorm": "^0.2.16"
   },
   "devDependencies": {
-    "@types/express": "^4.16.1",
+    "@types/express": "^4.17.0",
     "@types/node": "^10.14.6",
     "@types/webpack-env": "^1.13.9",
     "nodemon": "^1.18.11",
