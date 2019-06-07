@@ -28,7 +28,7 @@
     "class-validator": "^0.9.1",
     "express": "^4.17.1",
     "pg": "^7.9.0",
-    "reflect-metadata": "=0.1.12",
+    "reflect-metadata": "=0.1.13",
     "rxjs": "^6.5.2",
     "swagger-ui-express": "^4.0.2",
     "tsconfig-paths": "^3.8.0",
