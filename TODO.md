@@ -9,11 +9,9 @@
 
 - Add config environment variable to disable swagger docs on prod
 
-- replace crypto.pbkdf2 with crypto.scrypt for passwords hashing
-    - use await with promise, not bare *Sync methods 
-    - possibly with kdf() and verify() wrappers for HMAC addition:
-        https://github.com/chrisveness/scrypt-kdf/blob/master/scrypt.js
-    - use crypto.timingSafeEqual() for verification
++ replace crypto.pbkdf2 with crypto.scrypt for passwords hashing
+    + use await with promise, not bare *Sync methods
+    + use crypto.timingSafeEqual() for verification
 
 - add health checks with terminus: https://docs.nestjs.com/recipes/terminus
 
@@ -24,6 +22,8 @@
   + Remove `?skip=n` query param requirement from `/books` path
 
 ### Web
+
+- fix peer dependencies
 
 - Add pagination for /books route
 
