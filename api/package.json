@@ -32,7 +32,7 @@
     "rxjs": "^6.5.2",
     "swagger-ui-express": "^4.0.6",
     "tsconfig-paths": "^3.8.0",
-    "typeorm": "^0.2.16"
+    "typeorm": "^0.2.18"
   },
   "devDependencies": {
     "@types/express": "^4.17.0",
