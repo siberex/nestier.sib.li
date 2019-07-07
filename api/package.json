@@ -19,7 +19,7 @@
     "lint": "tslint -p ."
   },
   "dependencies": {
-    "@nestjs/common": "^6.3.2",
+    "@nestjs/common": "^6.4.1",
     "@nestjs/core": "^6.4.0",
     "@nestjs/platform-express": "^6.3.2",
     "@nestjs/swagger": "^3.0.2",
