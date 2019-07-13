@@ -18,19 +18,19 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@nestjs/common@^6.4.1":
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-6.4.1.tgz#61b3ed1fbca22b09ab3fca7bc3c5cc814e7711fc"
-  integrity sha512-qgex1F+ag5/8rxgsBHyXjNIyNJhNGjB1UHcFhMjGYxbfaz/5TSiv5A07IN2ZkCyNPRe35YPEvM5tJjTDul6FIg==
+"@nestjs/common@^6.5.2":
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-6.5.2.tgz#a864a62f859a7662f658febc0e9a115eee00739e"
+  integrity sha512-vkB6JLPPckjS35usLMV3Q6vljkgzhN3jgQ+U1VY6cKriyjnkIcUKo37tNQSPYkaAGe1pOLK4IkmwMTSyhNieyg==
   dependencies:
     axios "0.19.0"
     cli-color "1.4.0"
     uuid "3.3.2"
 
-"@nestjs/core@^6.4.1":
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-6.4.1.tgz#9810563ea5e08e63af1d5a87ced8f3e8674b9fb4"
-  integrity sha512-g11VtXwXtTO9i1o+is5JNhUsiUa/tNqmtW2GWxXZcmjxNbCLOOjkLd2FHsyCLpBnl7OVkYDqwL9Fcl9ydgQa3Q==
+"@nestjs/core@^6.5.2":
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-6.5.2.tgz#42ff3ce1b1a51055bbc4732e60d1029fb8ca487d"
+  integrity sha512-LTRCl4oaFP43DcPHbvVO0sH72M+N0uGwnqc0UxhJ7ovJMX6xhahSot1QTkBb56V2AIfmzaRbGpuA4qhIgBXj6A==
   dependencies:
     "@nuxtjs/opencollective" "0.2.2"
     fast-safe-stringify "2.0.6"
@@ -39,10 +39,10 @@
     optional "0.1.4"
     uuid "3.3.2"
 
-"@nestjs/platform-express@^6.3.2":
-  version "6.3.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.3.2.tgz#2b224a87daa193ffa56ef64acd48f28b4a754060"
-  integrity sha512-fQTh+zXDgw7W/30ctVlhOCZVDn8P0Ry1UcxltH2dAmyYDih+gQtWeEMzotwB6MwaAAAo8hQ8nBWWY4vez1dzJQ==
+"@nestjs/platform-express@^6.5.2":
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.5.2.tgz#78c8d948fe52a389afd6e9d78a9c02cd4da9de8e"
+  integrity sha512-F/y+P7IkT6xALfPZO/MwiHHVl/3rYjkD4IvNa21d4QVLnBrp3CcQztysLTWtqmHMA8T5tUeoAZSDU9MnhMlK2w==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
@@ -4704,10 +4704,10 @@ webpack-sources@^1.1.0, webpack-sources@^1.3.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.35.2:
-  version "4.35.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.35.2.tgz#5c8b8a66602cbbd6ec65c6e6747914a61c1449b1"
-  integrity sha512-TZAmorNymV4q66gAM/h90cEjG+N3627Q2MnkSgKlX/z3DlNVKUtqy57lz1WmZU2+FUZwzM+qm7cGaO95PyrX5A==
+webpack@^4.35.0:
+  version "4.35.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.35.0.tgz#ad3f0f8190876328806ccb7a36f3ce6e764b8378"
+  integrity sha512-M5hL3qpVvtr8d4YaJANbAQBc4uT01G33eDpl/psRTBCfjxFTihdhin1NtAKB1ruDwzeVdcsHHV3NX+QsAgOosw==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
