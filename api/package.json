@@ -19,7 +19,7 @@
     "lint": "tslint -p ."
   },
   "dependencies": {
-    "@nestjs/common": "^6.5.2",
+    "@nestjs/common": "^6.5.3",
     "@nestjs/core": "^6.5.3",
     "@nestjs/platform-express": "^6.5.2",
     "@nestjs/swagger": "^3.0.2",
@@ -46,8 +46,8 @@
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "tslint": "^5.18.0",
     "typescript": "^3.5.2",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
+    "webpack": "^4.37.0",
+    "webpack-cli": "^3.3.6",
     "webpack-node-externals": "^1.7.2",
     "webpack-shell-plugin-next": "^0.6.4"
   }
