@@ -122,6 +122,14 @@
     "@angular-devkit/core" "8.1.1"
     rxjs "6.4.0"
 
+"@angular-devkit/schematics@8.1.2":
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-8.1.2.tgz#2b8926d4af7992d6f99ddecd86cd81cb1a619d69"
+  integrity sha512-Di/3vPR4jwdYcMAk13t19sAF0qQUH8KSkFcmO/5E/gECTL1tXNvV690K1Vhn6zpeE17Z1MLB5HwRNcb6nJkD+Q==
+  dependencies:
+    "@angular-devkit/core" "8.1.2"
+    rxjs "6.4.0"
+
 "@angular/animations@^8.1.1":
   version "8.1.1"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-8.1.1.tgz#ee8222d700db5d56e78dfd2b9d26efc70102964d"
@@ -270,18 +278,17 @@
     optional "0.1.4"
     uuid "3.3.2"
 
-"@nestjs/ng-universal@1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/ng-universal/-/ng-universal-1.2.0.tgz#f31fa074c8e833bb6c98d86692a8b2b729993cd2"
-  integrity sha512-JNpKn1e7yHTESPMyZECnOpEvS6z7PBA1rxt8PPkteHpTaYMLi8ZXZIyOSrfo9GPLf6Alqo1rPxQIOHjw0fSaCg==
+"@nestjs/ng-universal@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/ng-universal/-/ng-universal-2.0.0.tgz#996c4312ddfc0ee5e61bd32b55d904e9eacf439d"
+  integrity sha512-IQGBNb0luC09nII/vmtSiAa4RPV8EdEpqlyJcsqf/H3WdlbcRH+tosCfVTeDCXn2KdiUk2w6zASTesReRKFsWA==
   dependencies:
-    "@angular-devkit/schematics" "8.1.1"
-    "@schematics/angular" "8.1.1"
+    "@angular-devkit/schematics" "8.1.2"
+    "@schematics/angular" "8.1.2"
     concurrently "4.1.1"
     cross-spawn "6.0.5"
     livereload "0.8.0"
     memory-cache "0.2.0"
-    string-replace-loader "^2.1.1"
     webpack-node-externals "1.7.2"
 
 "@nestjs/platform-express@^6.5.2":
@@ -336,6 +343,14 @@
   dependencies:
     "@angular-devkit/core" "8.1.1"
     "@angular-devkit/schematics" "8.1.1"
+
+"@schematics/angular@8.1.2":
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-8.1.2.tgz#bd81b6f1131697d16dfbb6b275c24dad9cc41c83"
+  integrity sha512-BeEzuS0s4j+BPboUhl97VMfhj7V+HpNbbY3PkD3TLd0cnSEoaLmtX+YjxbxZgwk6vhDp+l6YtpWt//5H/+0rFQ==
+  dependencies:
+    "@angular-devkit/core" "8.1.2"
+    "@angular-devkit/schematics" "8.1.2"
 
 "@schematics/update@0.801.1":
   version "0.801.1"
@@ -6133,14 +6148,6 @@ strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
   integrity sha1-J5siXfHVgrH1TmWt3UNS4Y+qBxM=
-
-string-replace-loader@^2.1.1:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/string-replace-loader/-/string-replace-loader-2.2.0.tgz#0a0e6543fcec783d85c353a3e96a23872d45a94f"
-  integrity sha512-Ukt4ZC8+xVWdBRut3/iwnPJCNL1yV8AbVKXn8UcWdYrHgtuW4UDDAbBSi/J/CQDEWQBt824AJvPYahF23eJLRg==
-  dependencies:
-    loader-utils "^1.2.3"
-    schema-utils "^1.0.0"
 
 string-width@^1.0.1:
   version "1.0.2"
