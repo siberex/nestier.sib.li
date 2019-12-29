@@ -30,7 +30,7 @@
     "express": "^4.17.1",
     "pg": "^7.12.1",
     "reflect-metadata": "=0.1.12",
-    "rxjs": "^6.5.2",
+    "rxjs": "^6.5.4",
     "swagger-ui-express": "^4.0.7",
     "tsconfig-paths": "^3.8.0",
     "typeorm": "^0.2.18"
