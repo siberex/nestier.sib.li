@@ -919,10 +919,10 @@
     memory-cache "0.2.0"
     webpack-node-externals "1.7.2"
 
-"@nestjs/platform-express@^6.5.3":
-  version "6.5.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.5.3.tgz#0260f2c13e5914dc121dbd3a221afb5305b9f813"
-  integrity sha512-c5n4XUbDDmF6MfBGYWM1jtsIDpVsOfOQtf3S0w3IeJNqm7dnmVAvO2Jk+RsYpt50tN4NAXntM3YTuTDqMb9uiA==
+"@nestjs/platform-express@^6.10.13":
+  version "6.10.13"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.10.13.tgz#8fb475fe3a906b24fd1376f4e7e5bf433fd8600f"
+  integrity sha512-eT/BmJOl/No1fJuW5GvoufxPofrmLVtrbyqiR05Dd1u24r4g5j7sU8WbA5jqetqRM5Jxtz+tqCH1Ketp5J2SFA==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
