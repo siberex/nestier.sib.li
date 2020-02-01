@@ -920,15 +920,16 @@
     memory-cache "0.2.0"
     webpack-node-externals "1.7.2"
 
-"@nestjs/platform-express@^6.5.3":
-  version "6.5.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.5.3.tgz#0260f2c13e5914dc121dbd3a221afb5305b9f813"
-  integrity sha512-c5n4XUbDDmF6MfBGYWM1jtsIDpVsOfOQtf3S0w3IeJNqm7dnmVAvO2Jk+RsYpt50tN4NAXntM3YTuTDqMb9uiA==
+"@nestjs/platform-express@^6.11.5":
+  version "6.11.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-6.11.5.tgz#c8c863ae1aacdc3e77dcd5155d7147a2134ab096"
+  integrity sha512-kPbUzlo7eN68LesTQ3Y1siJ1BJZo2DUINqdrv92hPv834nTX9P36+Ee4LNGHmO8I4vCdRweudrurxAYntuN+gw==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
     express "4.17.1"
     multer "1.4.2"
+    tslib "1.10.0"
 
 "@ngtools/webpack@8.3.4":
   version "8.3.4"
