@@ -49,6 +49,6 @@
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
     "webpack-node-externals": "^1.7.2",
-    "webpack-shell-plugin-next": "^0.6.4"
+    "webpack-shell-plugin-next": "^1.1.7"
   }
 }
