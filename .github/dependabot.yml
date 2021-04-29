@@ -1,0 +1,106 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/api"
+  schedule:
+    interval: weekly
+    day: sunday
+  open-pull-requests-limit: 15
+  reviewers:
+  - siberex
+  ignore:
+  - dependency-name: ts-loader
+    versions:
+    - 8.0.14
+    - 8.0.15
+    - 8.0.17
+    - 8.0.18
+    - 8.1.0
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.22
+    - 14.14.25
+    - 14.14.27
+    - 14.14.31
+    - 14.14.34
+    - 14.14.35
+    - 14.14.37
+  - dependency-name: rxjs
+    versions:
+    - 6.6.3
+    - 6.6.6
+  - dependency-name: typeorm
+    versions:
+    - 0.2.30
+    - 0.2.31
+  - dependency-name: webpack-cli
+    versions:
+    - 4.4.0
+    - 4.5.0
+  - dependency-name: ts-node-dev
+    versions:
+    - 1.1.1
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+- package-ecosystem: npm
+  directory: "/web"
+  schedule:
+    interval: weekly
+    day: sunday
+  open-pull-requests-limit: 15
+  reviewers:
+  - siberex
+  ignore:
+  - dependency-name: "@angular/cli"
+    versions:
+    - 11.1.1
+    - 11.1.2
+    - 11.1.4
+    - 11.2.0
+    - 11.2.1
+    - 11.2.2
+    - 11.2.3
+    - 11.2.4
+    - 11.2.5
+    - 11.2.6
+    - 11.2.7
+    - 11.2.8
+  - dependency-name: "@angular/language-service"
+    versions:
+    - 11.1.0
+    - 11.1.1
+    - 11.1.2
+    - 11.2.0
+    - 11.2.1
+    - 11.2.3
+    - 11.2.4
+    - 11.2.5
+    - 11.2.6
+    - 11.2.7
+    - 11.2.8
+    - 11.2.9
+  - dependency-name: ts-loader
+    versions:
+    - 8.0.14
+    - 8.0.15
+    - 8.0.17
+    - 8.0.18
+    - 8.1.0
+  - dependency-name: rxjs
+    versions:
+    - 6.6.3
+    - 6.6.6
+  - dependency-name: webpack-cli
+    versions:
+    - 4.4.0
+    - 4.5.0
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
