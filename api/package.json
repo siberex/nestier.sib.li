@@ -36,7 +36,7 @@
     "typeorm": "^0.2.18"
   },
   "devDependencies": {
-    "@types/express": "^4.17.1",
+    "@types/express": "^4.17.12",
     "@types/node": "^12.7.5",
     "@types/webpack-env": "^1.13.9",
     "nodemon": "^1.19.1",
